@@ -9,10 +9,18 @@
 import UIKit
 import XLPagerTabStrip
 
-class MainViewController: ButtonBarPagerTabStripViewController {
+protocol MainDisplayLogic: class
+{
+    func successGetMobileList(list: [MobilePhone])
+    func errorGetMobileList(errorMsg: String?)
+}
+
+class MainViewController: ButtonBarPagerTabStripViewController, MainDisplayLogic {
     
     fileprivate let mobileVC = MobileListViewController(itemInfo: "All")
     fileprivate let favoriteVC = FavoriteListViewController()
+    fileprivate var interactor: MainInteractorBusinessLogic?
+    fileprivate var mobileList: [MobilePhone] = []
     
     @IBAction func sortList(_ sender: UIButton) {
         let alertController = UIAlertController(title: "Sort", message: nil, preferredStyle: .alert)
@@ -31,6 +39,24 @@ class MainViewController: ButtonBarPagerTabStripViewController {
         alertController.addAction(ratingAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    private func setup() {
+        let interactor = MainInteractor()
+        let presenter = MainPresenter()
+        self.interactor = interactor
+        interactor.presenter = presenter
+        presenter.viewController = self
     }
     
     override func viewDidLoad() {
@@ -59,6 +85,17 @@ class MainViewController: ButtonBarPagerTabStripViewController {
     override public func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
 //        return [mobileVC, favoriteVC]
         return [mobileVC]
+    }
+    
+    func successGetMobileList(list: [MobilePhone]) {
+        
+    }
+    
+    func errorGetMobileList(errorMsg: String?) {
+        let alertController = UIAlertController(title: nil, message: errorMsg, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
     
 }

@@ -48,6 +48,10 @@
 		236C0E8221537CDC00021B0E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329BF215354F200C1D17B /* Alamofire.framework */; };
 		236C0E8321537CDC00021B0E /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 232329BF215354F200C1D17B /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2380E4AF2153956A003382A8 /* MobilePhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380E4AE2153956A003382A8 /* MobilePhone.swift */; };
+		23DB8683215396FB00F6D70A /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB8682215396FB00F6D70A /* MainInteractor.swift */; };
+		23DB86852153974000F6D70A /* MainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB86842153974000F6D70A /* MainWorker.swift */; };
+		23DB8687215397D200F6D70A /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB8686215397D200F6D70A /* MainPresenter.swift */; };
+		23DB86892153984C00F6D70A /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB86882153984C00F6D70A /* MainModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +131,10 @@
 		236C0E6821536CA400021B0E /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		236C0E8B21537D6C00021B0E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2380E4AE2153956A003382A8 /* MobilePhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilePhone.swift; sourceTree = "<group>"; };
+		23DB8682215396FB00F6D70A /* MainInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		23DB86842153974000F6D70A /* MainWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWorker.swift; sourceTree = "<group>"; };
+		23DB8686215397D200F6D70A /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		23DB86882153984C00F6D70A /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +258,7 @@
 				232329C621535C6100C1D17B /* MobileDetail */,
 				232329C521535C5500C1D17B /* FavoriteList */,
 				232329C421535C4600C1D17B /* MobileList */,
+				23DB868A2153988800F6D70A /* Main */,
 				2343BC8221535168006BBC3A /* AppDelegate.swift */,
 				232329EC215366E900C1D17B /* MobileCell.xib */,
 				2343BC8621535168006BBC3A /* Main.storyboard */,
@@ -258,7 +267,6 @@
 				2343BC8E21535168006BBC3A /* Info.plist */,
 				232329DC215363AC00C1D17B /* Properties.swift */,
 				232329E6215365E900C1D17B /* MobileCell.swift */,
-				232329EE2153671800C1D17B /* MainViewController.swift */,
 				236C0E6821536CA400021B0E /* Extension.swift */,
 			);
 			path = "Clean Mobile Buyer Guide";
@@ -280,6 +288,18 @@
 				2343BCA421535168006BBC3A /* Info.plist */,
 			);
 			path = "Clean Mobile Buyer GuideUITests";
+			sourceTree = "<group>";
+		};
+		23DB868A2153988800F6D70A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				232329EE2153671800C1D17B /* MainViewController.swift */,
+				23DB86842153974000F6D70A /* MainWorker.swift */,
+				23DB8682215396FB00F6D70A /* MainInteractor.swift */,
+				23DB8686215397D200F6D70A /* MainPresenter.swift */,
+				23DB86882153984C00F6D70A /* MainModel.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,11 +456,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23DB86852153974000F6D70A /* MainWorker.swift in Sources */,
 				236C0E6721536C6500021B0E /* AlertController.swift in Sources */,
 				232329C921535FDD00C1D17B /* MobileListViewController.swift in Sources */,
 				232329EF2153671800C1D17B /* MainViewController.swift in Sources */,
 				232329C32153555A00C1D17B /* ConnectionController.swift in Sources */,
 				2380E4AF2153956A003382A8 /* MobilePhone.swift in Sources */,
+				23DB86892153984C00F6D70A /* MainModel.swift in Sources */,
 				232329E92153664C00C1D17B /* MobileListRouter.swift in Sources */,
 				232329DD215363AC00C1D17B /* Properties.swift in Sources */,
 				232329EB2153665900C1D17B /* MobileListModel.swift in Sources */,
@@ -448,9 +470,11 @@
 				232329DF2153642A00C1D17B /* MobileListInteractor.swift in Sources */,
 				236C0E6921536CA400021B0E /* Extension.swift in Sources */,
 				232329F12153678900C1D17B /* FavoriteListViewController.swift in Sources */,
+				23DB8687215397D200F6D70A /* MainPresenter.swift in Sources */,
 				232329E12153645300C1D17B /* MobileListPresenter.swift in Sources */,
 				2343BC8321535168006BBC3A /* AppDelegate.swift in Sources */,
 				232329E32153646300C1D17B /* MobileListWorker.swift in Sources */,
+				23DB8683215396FB00F6D70A /* MainInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
