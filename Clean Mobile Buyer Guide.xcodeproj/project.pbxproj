@@ -55,6 +55,7 @@
 		23DB868E21539BE700F6D70A /* FavoriteListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB868D21539BE700F6D70A /* FavoriteListPresenter.swift */; };
 		23DB869021539BF200F6D70A /* FavoriteListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB868F21539BF200F6D70A /* FavoriteListWorker.swift */; };
 		23DB869221539BFB00F6D70A /* FavoriteListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB869121539BFB00F6D70A /* FavoriteListRouter.swift */; };
+		23DB86942153AFD900F6D70A /* MobileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB86932153AFD900F6D70A /* MobileDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		23DB868D21539BE700F6D70A /* FavoriteListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListPresenter.swift; sourceTree = "<group>"; };
 		23DB868F21539BF200F6D70A /* FavoriteListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListWorker.swift; sourceTree = "<group>"; };
 		23DB869121539BFB00F6D70A /* FavoriteListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListRouter.swift; sourceTree = "<group>"; };
+		23DB86932153AFD900F6D70A /* MobileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,7 +227,7 @@
 		232329C621535C6100C1D17B /* MobileDetail */ = {
 			isa = PBXGroup;
 			children = (
-				2380E4AE2153956A003382A8 /* MobilePhone.swift */,
+				23DB86932153AFD900F6D70A /* MobileDetailViewController.swift */,
 			);
 			path = MobileDetail;
 			sourceTree = "<group>";
@@ -263,6 +265,7 @@
 		2343BC8121535167006BBC3A /* Clean Mobile Buyer Guide */ = {
 			isa = PBXGroup;
 			children = (
+				23DB86982153B04400F6D70A /* Data Object */,
 				232329C721535C7400C1D17B /* Controller */,
 				232329C621535C6100C1D17B /* MobileDetail */,
 				232329C521535C5500C1D17B /* FavoriteList */,
@@ -309,6 +312,14 @@
 				23DB86882153984C00F6D70A /* MainModel.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		23DB86982153B04400F6D70A /* Data Object */ = {
+			isa = PBXGroup;
+			children = (
+				2380E4AE2153956A003382A8 /* MobilePhone.swift */,
+			);
+			path = "Data Object";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,6 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23DB86942153AFD900F6D70A /* MobileDetailViewController.swift in Sources */,
 				23DB86852153974000F6D70A /* MainWorker.swift in Sources */,
 				236C0E6721536C6500021B0E /* AlertController.swift in Sources */,
 				232329C921535FDD00C1D17B /* MobileListViewController.swift in Sources */,

@@ -21,21 +21,21 @@ class MainViewController: ButtonBarPagerTabStripViewController, MainDisplayLogic
     fileprivate let mobileVC = MobileListViewController(itemInfo: "All")
     fileprivate let favoriteVC = FavoriteListViewController(itemInfo: "Favorite")
     fileprivate var interactor: MainInteractorBusinessLogic?
+    fileprivate var dataStore: MainInteractorDataStore?
     fileprivate var mobileList: [MobilePhone] = []
-    fileprivate var sortType: SortType = .none
     
     @IBAction func sortList(_ sender: UIButton) {
         let alertController = UIAlertController(title: "Sort", message: nil, preferredStyle: .alert)
         let lowPriceAction = UIAlertAction(title: "Price low to high", style: .default, handler: { _ in
-            self.sortType = .lowPrice
+            self.dataStore?.sortType = .lowPrice
             self.updateList(list: self.mobileList, sortType: .lowPrice)
         })
         let highPriceAction = UIAlertAction(title: "Price high to low", style: .default, handler: { _ in
-            self.sortType = .highPrice
+            self.dataStore?.sortType = .highPrice
             self.updateList(list: self.mobileList, sortType: .highPrice)
         })
         let ratingAction = UIAlertAction(title: "Rating", style: .default, handler: { _ in
-            self.sortType = .rating
+            self.dataStore?.sortType = .rating
             self.updateList(list: self.mobileList, sortType: .rating)
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -60,6 +60,7 @@ class MainViewController: ButtonBarPagerTabStripViewController, MainDisplayLogic
         let interactor = MainInteractor()
         let presenter = MainPresenter()
         self.interactor = interactor
+        self.dataStore = interactor
         interactor.presenter = presenter
         presenter.viewController = self
     }
@@ -100,7 +101,7 @@ class MainViewController: ButtonBarPagerTabStripViewController, MainDisplayLogic
     }
     
     func successGetMobileList(list: [MobilePhone]) {
-        updateList(list: list, sortType: .none)
+        updateList(list: list, sortType: self.dataStore?.sortType ?? .none)
     }
     
     func errorGetMobileList(errorMsg: String?) {
@@ -111,7 +112,7 @@ class MainViewController: ButtonBarPagerTabStripViewController, MainDisplayLogic
     }
     
     func updateFavoriteList(list: [MobilePhone]) {
-        updateList(list: list, sortType: self.sortType)
+        updateList(list: list, sortType: self.dataStore?.sortType ?? .none)
     }
     
     fileprivate func updateList(list: [MobilePhone], sortType: SortType) {

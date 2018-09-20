@@ -13,8 +13,13 @@ protocol MainInteractorBusinessLogic {
     func favoriteMobile(list: [MobilePhone], id: Int, isFavorite: Bool)
 }
 
-class MainInteractor: MainInteractorBusinessLogic {
+protocol MainInteractorDataStore {
+    var sortType: SortType { get set }
+}
 
+class MainInteractor: MainInteractorBusinessLogic, MainInteractorDataStore {
+
+    var sortType: SortType = .none
     var presenter: MainPresentationLogic?
     var worker: MainWorker?
     

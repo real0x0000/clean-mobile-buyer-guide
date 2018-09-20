@@ -10,27 +10,28 @@ import SwiftyJSON
 
 struct MobilePhone {
     
-    var thumbnailUrl: String?
-    var name: String
-    var rating: Double
-    var id: Int
-    var price: Double
-    var desc: String
-    var brand: String
+    let name: String
+    let id: Int
+    let desc: String
+    let thumbnailUrl: String?
+    let rating: Double
+    let price: Double
+    let brand: String
+    var isFavorite: Bool
     
 }
 
 extension MobilePhone {
     
     static func parseJSON(_ json: JSON) -> MobilePhone {
-        let thumbnailUrl = json["thumbImageURL"].string
         let name = json["name"].stringValue
-        let rating = json["rating"].doubleValue
         let id = json["id"].intValue
-        let price = json["price"].doubleValue
         let desc = json["description"].stringValue
+        let thumbnailUrl = json["thumbImageURL"].string
+        let rating = json["rating"].doubleValue
+        let price = json["price"].doubleValue
         let brand = json["brand"].stringValue
-        return MobilePhone(thumbnailUrl: thumbnailUrl, name: name, rating: rating, id: id, price: price, desc: desc, brand: brand)
+        return MobilePhone(name: name, id: id, desc: desc, thumbnailUrl: thumbnailUrl, rating: rating, price: price, brand: brand, isFavorite: false)
     }
     
 }
