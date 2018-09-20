@@ -13,10 +13,15 @@ protocol FLInteractorBusinessLogic {
     func getFavoriteList(list: [MobilePhone], sortType: SortType)
 }
 
-class FavoriteListInteractor: FLInteractorBusinessLogic {
+protocol FLDataStore {
+    var favoritePhone: MobilePhone? { get set }
+}
+
+class FavoriteListInteractor: FLInteractorBusinessLogic, FLDataStore {
     
     var presenter: FLPresentationLogic?
     var worker: FavoriteListWorker?
+    var favoritePhone: MobilePhone?
     
     func getFavoriteList(list: [MobilePhone], sortType: SortType) {
         worker = FavoriteListWorker()

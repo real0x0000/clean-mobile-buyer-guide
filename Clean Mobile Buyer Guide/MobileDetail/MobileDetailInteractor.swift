@@ -12,11 +12,16 @@ protocol MDInteractorBusinessLogic {
     func getMobileImages(_ id: Int)
 }
 
-class MobileDetailInteractor: MDInteractorBusinessLogic {
+protocol MDDataStore {
+    var mobileData: MobilePhone? { get set }
+}
+
+class MobileDetailInteractor: MDInteractorBusinessLogic, MDDataStore {
     
     var presenter: MDPresentationLogic?
     var worker: MobileDetailWorker?
-
+    var mobileData: MobilePhone?
+    
     func getMobileImages(_ id: Int) {
         worker = MobileDetailWorker()
         worker?.getMobileImages(id, success: { (urls) in

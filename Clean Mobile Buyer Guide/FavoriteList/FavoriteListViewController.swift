@@ -18,8 +18,8 @@ class FavoriteListViewController: UITableViewController, FLDisplayLogic {
     
     var itemInfo: IndicatorInfo = "View"
     var interactor: FLInteractorBusinessLogic?
+    var router: (NSObjectProtocol & FavoriteRoutingLogic & FavoriteDataPassing)?
     fileprivate var favoriteList: [MobilePhone] = []
-    //    fileprivate var router
     
     init(itemInfo: IndicatorInfo) {
         self.itemInfo = itemInfo
@@ -40,9 +40,13 @@ class FavoriteListViewController: UITableViewController, FLDisplayLogic {
     private func setup() {
         let interactor = FavoriteListInteractor()
         let presenter = FavoriteListPresenter()
+        let router = FavoriteListRouter()
         self.interactor = interactor
+        self.router = router
         interactor.presenter = presenter
         presenter.viewController = self
+        router.viewController = self
+        router.dataStore = interactor
     }
     
     override func viewDidLoad() {
@@ -74,6 +78,13 @@ class FavoriteListViewController: UITableViewController, FLDisplayLogic {
         let mobile = favoriteList[indexPath.row]
         cell.apply(mobile)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let mobile = favoriteList[indexPath.row]
+        router?.dataStore?.favoritePhone = mobile
+        router?.routeToDetail()
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

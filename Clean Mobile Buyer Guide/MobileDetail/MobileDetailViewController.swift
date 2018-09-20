@@ -16,6 +16,7 @@ protocol MDDisplayLogic: class
 
 class MobileDetailViewController: UIViewController, MDDisplayLogic {
  
+    var router: (NSObjectProtocol & MobileDetailRoutingLogic & MobileDetailPassing)?
     fileprivate var interactor: MDInteractorBusinessLogic?
     fileprivate var mobileImagesUrl: [String] = []
     
@@ -24,19 +25,44 @@ class MobileDetailViewController: UIViewController, MDDisplayLogic {
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var descLabel: UILabel!
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    private func setup() {
+        let interactor = MobileDetailInteractor()
+        let presenter = MobileDetailPresenter()
+        let router = MobileDetailRouter()
+        self.interactor = interactor
+        self.router = router
+        interactor.presenter = presenter
+        presenter.viewController = self
+        router.viewController = self
+        router.dataStore = interactor
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initCollectionView()
-        interactor?.getMobileImages(0)
+        if let mobileData = router?.dataStore?.mobileData {
+            interactor?.getMobileImages(mobileData.id)
+            displayMobile(mobileData)
+        }
     }
     
-    fileprivate func displayMobile() {
-//        navigationItem.title = mobile.name
-//        priceLabel.text = "Price: \(mobile.price)"
-//        ratingLabel.text = "Rating: \(mobile.rating)"
-//        descLabel.text = mobile.desc
+    fileprivate func displayMobile(_ mobile: MobilePhone) {
+        navigationItem.title = mobile.name
+        priceLabel.text = "Price: \(mobile.price)"
+        ratingLabel.text = "Rating: \(mobile.rating)"
+        descLabel.text = mobile.desc
     }
-    
+
 }
 
 extension MobileDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {
