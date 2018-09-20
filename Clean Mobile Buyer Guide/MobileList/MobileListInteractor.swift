@@ -9,25 +9,22 @@
 import UIKit
 
 protocol MLInteractorBusinessLogic {
-    func getMobileList(sortType: SortType)
+    func sortList(list: [MobilePhone], sortType: SortType)
 }
 
-protocol MLInteractorDataStore {
-    //
-}
-
-class MobileListInteractor: MLInteractorBusinessLogic, MLInteractorDataStore {
+class MobileListInteractor: MLInteractorBusinessLogic {
     
     var presenter: MLPresentationLogic?
     var worker: MobileListWorker?
-    
-    func getMobileList(sortType: SortType) {
+        
+    func sortList(list: [MobilePhone], sortType: SortType) {
         worker = MobileListWorker()
-        worker?.getMobileList(sortType: sortType, success: { (list) in
-            self.presenter?.presentGetListResults(response: MobileListModel.Response(list: list, isError: false, message: nil))
-        }, failure: { (errorMsg) in
-            self.presenter?.presentGetListResults(response: MobileListModel.Response(list: [], isError: true, message: errorMsg))
-        })
+        if let sortList = worker?.sortList(list: list, sortType: sortType) {
+            self.presenter?.presentSortList(list: sortList)
+        }
+        else {
+            self.presenter?.presentSortList(list: list)
+        }
     }
     
 }

@@ -27,7 +27,7 @@ extension MobilePhone {
         let name = json["name"].stringValue
         let id = json["id"].intValue
         let desc = json["description"].stringValue
-        let thumbnailUrl = json["thumbImageUrl"].string
+        let thumbnailUrl = json["thumbImageURL"].string
         let rating = json["rating"].doubleValue
         let price = json["price"].doubleValue
         let brand = json["brand"].stringValue

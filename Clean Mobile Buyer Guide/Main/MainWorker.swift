@@ -10,7 +10,7 @@ import Foundation
 
 class MainWorker {
     
-    func getMobileList(sortType: SortType, success: @escaping(([MobilePhone]) -> ()), failure: @escaping((String) -> ())) {
+    func getMobileList(success: @escaping(([MobilePhone]) -> ()), failure: @escaping((String) -> ())) {
         ConnectionController.share.makeRequest(Properties.Service.SERVICE_URL, onCompletion: { (result) in
             if let json = result {
                 let list = json.map { (_, js) in MobilePhone.parseJSON(js) }
@@ -22,6 +22,14 @@ class MainWorker {
         }, onError: { (errorMsg) in
             failure(errorMsg)
         })
+    }
+    
+    func favoriteMobile(list: [MobilePhone], id: Int, isFavorite: Bool) -> [MobilePhone] {
+        var updateList: [MobilePhone] = list
+        if let index = updateList.index(where: { $0.id == id }) {
+            updateList[index].isFavorite = isFavorite
+        }
+        return updateList
     }
     
 }

@@ -10,6 +10,7 @@ import Foundation
 
 protocol MainPresentationLogic {
     func presentGetListResults(response: MainModel.Response)
+    func presentUpdateList(list: [MobilePhone])
 }
 
 class MainPresenter: MainPresentationLogic {
@@ -23,6 +24,10 @@ class MainPresenter: MainPresentationLogic {
         else {
             viewController?.successGetMobileList(list: response.list)
         }
+    }
+    
+    func presentUpdateList(list: [MobilePhone]) {
+        viewController?.updateFavoriteList(list: list)
     }
     
 }

@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+extension Notification.Name {
+
+    static let updateFavorite = Notification.Name("updateFavorite")
+    
+}
+
 extension UIApplication {
     
     class func topViewController(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {

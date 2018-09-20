@@ -9,20 +9,15 @@
 import Foundation
 
 protocol MLPresentationLogic {
-    func presentGetListResults(response: MobileListModel.Response)
+    func presentSortList(list: [MobilePhone])
 }
 
 class MobileListPresenter: MLPresentationLogic {
     
     weak var viewController: MLDisplayLogic?
-    
-    func presentGetListResults(response: MobileListModel.Response) {
-        if response.isError {
-            viewController?.errorGetMobileList(errorMsg: response.message)
-        }
-        else {
-            viewController?.successGetMobileList(list: response.list)
-        }
+
+    func presentSortList(list: [MobilePhone]) {
+        viewController?.presentSortList(list: list)
     }
     
 }

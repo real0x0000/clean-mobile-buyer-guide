@@ -9,21 +9,32 @@
 import Foundation
 
 protocol MainInteractorBusinessLogic {
-    func getMobileList(sortType: SortType)
+    func getMobileList()
+    func favoriteMobile(list: [MobilePhone], id: Int, isFavorite: Bool)
 }
 
 class MainInteractor: MainInteractorBusinessLogic {
-    
+
     var presenter: MainPresentationLogic?
     var worker: MainWorker?
     
-    func getMobileList(sortType: SortType) {
+    func getMobileList() {
         worker = MainWorker()
-        worker?.getMobileList(sortType: sortType, success: { (list) in
+        worker?.getMobileList(success: { (list) in
             self.presenter?.presentGetListResults(response: MainModel.Response(list: list, isError: false, message: nil))
         }, failure: { (errorMsg) in
             self.presenter?.presentGetListResults(response: MainModel.Response(list: [], isError: true, message: errorMsg))
         })
+    }
+    
+    func favoriteMobile(list: [MobilePhone], id: Int, isFavorite: Bool) {
+        worker = MainWorker()
+        if let updateList = worker?.favoriteMobile(list: list, id: id, isFavorite: isFavorite) {
+            self.presenter?.presentUpdateList(list: updateList)
+        }
+        else {
+            self.presenter?.presentUpdateList(list: list)
+        }
     }
     
 }

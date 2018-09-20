@@ -11,17 +11,15 @@ import XLPagerTabStrip
 
 protocol MLDisplayLogic: class
 {
-    func successGetMobileList(list: [MobilePhone])
-    func errorGetMobileList(errorMsg: String?)
+    func presentSortList(list: [MobilePhone])
 }
 
 class MobileListViewController: UITableViewController, MLDisplayLogic {
     
     var itemInfo: IndicatorInfo = "View"
-    fileprivate var interactor: MLInteractorBusinessLogic?
+    var interactor: MLInteractorBusinessLogic?
     fileprivate var mobileList: [MobilePhone] = []
-//    fileprivate var router
-    
+   
     init(itemInfo: IndicatorInfo) {
         self.itemInfo = itemInfo
         super.init(nibName: nil, bundle: nil)
@@ -49,23 +47,15 @@ class MobileListViewController: UITableViewController, MLDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "MobileCell", bundle: Bundle.main), forCellReuseIdentifier: "MobileCell")
-        interactor?.getMobileList(sortType: .none)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
-    func successGetMobileList(list: [MobilePhone]) {
+    func presentSortList(list: [MobilePhone]) {
         mobileList = list
         tableView.reloadData()
-    }
-    
-    func errorGetMobileList(errorMsg: String?) {
-        let alertController = UIAlertController(title: nil, message: errorMsg, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        present(alertController, animated: true, completion: nil)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -78,10 +68,20 @@ class MobileListViewController: UITableViewController, MLDisplayLogic {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MobileCell", for: indexPath) as? MobileCell else { return MobileCell() }
-        cell.favoriteButton.isHidden = true
         let mobile = mobileList[indexPath.row]
         cell.apply(mobile)
+        cell.favoriteButton.tag = indexPath.row
+        cell.favoriteButton.addTarget(self, action: #selector(MobileListViewController.favorite(_:)), for: .touchUpInside)
         return cell
+    }
+    
+    @objc fileprivate func favorite(_ sender: UIButton) {
+        let row = sender.tag
+        let mobile = mobileList[row]
+        if !(mobile.isFavorite) {
+            let id = mobile.id
+            NotificationCenter.default.post(name: Notification.Name.updateFavorite, object: nil, userInfo: ["id": id, "isFavorite": true])
+        }
     }
     
 }

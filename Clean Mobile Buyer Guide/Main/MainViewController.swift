@@ -13,25 +13,30 @@ protocol MainDisplayLogic: class
 {
     func successGetMobileList(list: [MobilePhone])
     func errorGetMobileList(errorMsg: String?)
+    func updateFavoriteList(list: [MobilePhone])
 }
 
 class MainViewController: ButtonBarPagerTabStripViewController, MainDisplayLogic {
     
     fileprivate let mobileVC = MobileListViewController(itemInfo: "All")
-    fileprivate let favoriteVC = FavoriteListViewController()
+    fileprivate let favoriteVC = FavoriteListViewController(itemInfo: "Favorite")
     fileprivate var interactor: MainInteractorBusinessLogic?
     fileprivate var mobileList: [MobilePhone] = []
+    fileprivate var sortType: SortType = .none
     
     @IBAction func sortList(_ sender: UIButton) {
         let alertController = UIAlertController(title: "Sort", message: nil, preferredStyle: .alert)
         let lowPriceAction = UIAlertAction(title: "Price low to high", style: .default, handler: { _ in
-            
+            self.sortType = .lowPrice
+            self.updateList(list: self.mobileList, sortType: .lowPrice)
         })
         let highPriceAction = UIAlertAction(title: "Price high to low", style: .default, handler: { _ in
-            
+            self.sortType = .highPrice
+            self.updateList(list: self.mobileList, sortType: .highPrice)
         })
         let ratingAction = UIAlertAction(title: "Rating", style: .default, handler: { _ in
-            
+            self.sortType = .rating
+            self.updateList(list: self.mobileList, sortType: .rating)
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(lowPriceAction)
@@ -61,6 +66,7 @@ class MainViewController: ButtonBarPagerTabStripViewController, MainDisplayLogic
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.updateList(_:)), name: .updateFavorite, object: nil)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         settings.style.buttonBarBackgroundColor = UIColor.white
         settings.style.buttonBarItemBackgroundColor = UIColor.white
@@ -76,6 +82,7 @@ class MainViewController: ButtonBarPagerTabStripViewController, MainDisplayLogic
             oldCell?.label.textColor = UIColor.lightGray
             newCell?.label.textColor = UIColor.black
         }
+        interactor?.getMobileList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,12 +90,17 @@ class MainViewController: ButtonBarPagerTabStripViewController, MainDisplayLogic
     }
  
     override public func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-//        return [mobileVC, favoriteVC]
-        return [mobileVC]
+        return [mobileVC, favoriteVC]
+    }
+    
+    @objc fileprivate func updateList(_ notification: Notification) {
+        if let id = notification.userInfo?["id"] as? Int, let isFavorite = notification.userInfo?["isFavorite"] as? Bool {
+            interactor?.favoriteMobile(list: mobileList, id: id, isFavorite: isFavorite)
+        }
     }
     
     func successGetMobileList(list: [MobilePhone]) {
-        
+        updateList(list: list, sortType: .none)
     }
     
     func errorGetMobileList(errorMsg: String?) {
@@ -96,6 +108,16 @@ class MainViewController: ButtonBarPagerTabStripViewController, MainDisplayLogic
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
+    }
+    
+    func updateFavoriteList(list: [MobilePhone]) {
+        updateList(list: list, sortType: self.sortType)
+    }
+    
+    fileprivate func updateList(list: [MobilePhone], sortType: SortType) {
+        mobileList = list
+        mobileVC.interactor?.sortList(list: list, sortType: sortType)
+        favoriteVC.interactor?.getFavoriteList(list: list, sortType: sortType)
     }
     
 }

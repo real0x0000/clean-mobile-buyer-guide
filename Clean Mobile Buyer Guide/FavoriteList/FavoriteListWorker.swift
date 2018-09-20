@@ -1,14 +1,20 @@
 //
-//  MobileListWorker.swift
+//  FavoriteListWorker.swift
 //  Clean Mobile Buyer Guide
 //
 //  Created by ANUWAT SITTICHAK on 20/9/2561 BE.
 //  Copyright © 2561 ANUWAT SITTICHAK. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class MobileListWorker {
+class FavoriteListWorker {
+    
+    func getFavoriteList(list: [MobilePhone], sortType: SortType) -> [MobilePhone] {
+        let favList = list.filter { $0.isFavorite }
+        let sList = sortList(list: favList, sortType: sortType)
+        return sList
+    }
     
     func sortList(list: [MobilePhone], sortType: SortType) -> [MobilePhone] {
         var sortList: [MobilePhone] = []
@@ -24,5 +30,5 @@ class MobileListWorker {
         }
         return sortList
     }
-
+    
 }

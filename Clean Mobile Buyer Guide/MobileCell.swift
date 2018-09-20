@@ -33,12 +33,12 @@ class MobileCell: UITableViewCell {
         descLabel.text = mobile.desc
         priceLabel.text = "Price: $\(mobile.price)"
         ratingLabel.text = "Rating: \(mobile.rating)"
-//        if mobile.isFavorite {
-//            favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
-//        }
-//        else {
-//            favoriteButton.setImage(UIImage(named: "unfavorite"), for: .normal)
-//        }
+        if mobile.isFavorite {
+            favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
+        }
+        else {
+            favoriteButton.setImage(UIImage(named: "unfavorite"), for: .normal)
+        }
     }
     
 }
