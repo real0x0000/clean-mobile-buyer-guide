@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		232329C0215354F200C1D17B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329BF215354F200C1D17B /* Alamofire.framework */; };
+		232329C32153555A00C1D17B /* ConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329C22153555A00C1D17B /* ConnectionController.swift */; };
+		232329C921535FDD00C1D17B /* MobileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329C821535FDD00C1D17B /* MobileListViewController.swift */; };
+		232329CB2153632C00C1D17B /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CA2153632C00C1D17B /* XLPagerTabStrip.framework */; };
+		232329D42153637800C1D17B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CC2153637700C1D17B /* Realm.framework */; };
+		232329D52153637800C1D17B /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CD2153637800C1D17B /* RxCocoa.framework */; };
+		232329D62153637800C1D17B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CE2153637800C1D17B /* SwiftyJSON.framework */; };
+		232329D72153637800C1D17B /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CF2153637800C1D17B /* SDWebImage.framework */; };
+		232329D82153637800C1D17B /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D02153637800C1D17B /* RxBlocking.framework */; };
+		232329D92153637800C1D17B /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D12153637800C1D17B /* RxTest.framework */; };
+		232329DA2153637800C1D17B /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D22153637800C1D17B /* RxSwift.framework */; };
+		232329DB2153637800C1D17B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D32153637800C1D17B /* RealmSwift.framework */; };
+		232329DD215363AC00C1D17B /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329DC215363AC00C1D17B /* Properties.swift */; };
 		2343BC8321535168006BBC3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2343BC8221535168006BBC3A /* AppDelegate.swift */; };
 		2343BC8521535168006BBC3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2343BC8421535168006BBC3A /* ViewController.swift */; };
 		2343BC8821535168006BBC3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2343BC8621535168006BBC3A /* Main.storyboard */; };
@@ -34,6 +47,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		232329BF215354F200C1D17B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		232329C22153555A00C1D17B /* ConnectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionController.swift; sourceTree = "<group>"; };
+		232329C821535FDD00C1D17B /* MobileListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListViewController.swift; sourceTree = "<group>"; };
+		232329CA2153632C00C1D17B /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
+		232329CC2153637700C1D17B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		232329CD2153637800C1D17B /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		232329CE2153637800C1D17B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		232329CF2153637800C1D17B /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		232329D02153637800C1D17B /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		232329D12153637800C1D17B /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		232329D22153637800C1D17B /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		232329D32153637800C1D17B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		232329DC215363AC00C1D17B /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
 		2343BC7F21535167006BBC3A /* Clean Mobile Buyer Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clean Mobile Buyer Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2343BC8221535168006BBC3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2343BC8421535168006BBC3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +80,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				232329D42153637800C1D17B /* Realm.framework in Frameworks */,
+				232329D52153637800C1D17B /* RxCocoa.framework in Frameworks */,
+				232329D62153637800C1D17B /* SwiftyJSON.framework in Frameworks */,
+				232329D72153637800C1D17B /* SDWebImage.framework in Frameworks */,
+				232329D82153637800C1D17B /* RxBlocking.framework in Frameworks */,
+				232329D92153637800C1D17B /* RxTest.framework in Frameworks */,
+				232329DA2153637800C1D17B /* RxSwift.framework in Frameworks */,
+				232329DB2153637800C1D17B /* RealmSwift.framework in Frameworks */,
+				232329C0215354F200C1D17B /* Alamofire.framework in Frameworks */,
+				232329CB2153632C00C1D17B /* XLPagerTabStrip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +110,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		232329BE215354F200C1D17B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				232329CC2153637700C1D17B /* Realm.framework */,
+				232329D32153637800C1D17B /* RealmSwift.framework */,
+				232329D02153637800C1D17B /* RxBlocking.framework */,
+				232329CD2153637800C1D17B /* RxCocoa.framework */,
+				232329D22153637800C1D17B /* RxSwift.framework */,
+				232329D12153637800C1D17B /* RxTest.framework */,
+				232329CF2153637800C1D17B /* SDWebImage.framework */,
+				232329CE2153637800C1D17B /* SwiftyJSON.framework */,
+				232329CA2153632C00C1D17B /* XLPagerTabStrip.framework */,
+				232329BF215354F200C1D17B /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		232329C421535C4600C1D17B /* MobileList */ = {
+			isa = PBXGroup;
+			children = (
+				232329C821535FDD00C1D17B /* MobileListViewController.swift */,
+			);
+			path = MobileList;
+			sourceTree = "<group>";
+		};
+		232329C521535C5500C1D17B /* FavoriteList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FavoriteList;
+			sourceTree = "<group>";
+		};
+		232329C621535C6100C1D17B /* MobileDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MobileDetail;
+			sourceTree = "<group>";
+		};
+		232329C721535C7400C1D17B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		2343BC7621535167006BBC3A = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +163,7 @@
 				2343BC9621535168006BBC3A /* Clean Mobile Buyer GuideTests */,
 				2343BCA121535168006BBC3A /* Clean Mobile Buyer GuideUITests */,
 				2343BC8021535167006BBC3A /* Products */,
+				232329BE215354F200C1D17B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +180,18 @@
 		2343BC8121535167006BBC3A /* Clean Mobile Buyer Guide */ = {
 			isa = PBXGroup;
 			children = (
+				232329C721535C7400C1D17B /* Controller */,
+				232329C621535C6100C1D17B /* MobileDetail */,
+				232329C521535C5500C1D17B /* FavoriteList */,
+				232329C421535C4600C1D17B /* MobileList */,
 				2343BC8221535168006BBC3A /* AppDelegate.swift */,
 				2343BC8421535168006BBC3A /* ViewController.swift */,
 				2343BC8621535168006BBC3A /* Main.storyboard */,
 				2343BC8921535168006BBC3A /* Assets.xcassets */,
 				2343BC8B21535168006BBC3A /* LaunchScreen.storyboard */,
 				2343BC8E21535168006BBC3A /* Info.plist */,
+				232329C22153555A00C1D17B /* ConnectionController.swift */,
+				232329DC215363AC00C1D17B /* Properties.swift */,
 			);
 			path = "Clean Mobile Buyer Guide";
 			sourceTree = "<group>";
@@ -135,6 +224,7 @@
 				2343BC7B21535167006BBC3A /* Sources */,
 				2343BC7C21535167006BBC3A /* Frameworks */,
 				2343BC7D21535167006BBC3A /* Resources */,
+				232329C12153552700C1D17B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -254,12 +344,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		232329C12153552700C1D17B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2343BC7B21535167006BBC3A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				232329C921535FDD00C1D17B /* MobileListViewController.swift in Sources */,
 				2343BC8521535168006BBC3A /* ViewController.swift in Sources */,
+				232329C32153555A00C1D17B /* ConnectionController.swift in Sources */,
+				232329DD215363AC00C1D17B /* Properties.swift in Sources */,
 				2343BC8321535168006BBC3A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +537,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Clean Mobile Buyer Guide/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anuwat-sittichak.clean-mbg.Clean-Mobile-Buyer-Guide";
@@ -441,6 +555,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Clean Mobile Buyer Guide/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anuwat-sittichak.clean-mbg.Clean-Mobile-Buyer-Guide";
