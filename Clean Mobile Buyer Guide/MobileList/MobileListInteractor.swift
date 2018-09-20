@@ -6,10 +6,28 @@
 //  Copyright © 2561 ANUWAT SITTICHAK. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class MobileListInteractor {
+protocol MLInteractorBusinessLogic {
+    func getMobileList(sortType: SortType)
+}
+
+protocol MLInteractorDataStore {
+    //
+}
+
+class MobileListInteractor: MLInteractorBusinessLogic, MLInteractorDataStore {
     
+    var presenter: MLPresentationLogic?
+    var worker: MobileListWorker?
     
+    func getMobileList(sortType: SortType) {
+        worker = MobileListWorker()
+        worker?.getMobileList(sortType: sortType, success: { (list) in
+            self.presenter?.presentGetListResults(response: MobileListModel.Response(list: list, isError: false, message: nil))
+        }, failure: { (errorMsg) in
+            self.presenter?.presentGetListResults(response: MobileListModel.Response(list: [], isError: true, message: errorMsg))
+        })
+    }
     
 }

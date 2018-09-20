@@ -11,7 +11,7 @@ import XLPagerTabStrip
 
 class MainViewController: ButtonBarPagerTabStripViewController {
     
-    fileprivate let mobileVC = MobileListViewController()
+    fileprivate let mobileVC = MobileListViewController(itemInfo: "All")
     fileprivate let favoriteVC = FavoriteListViewController()
     
     @IBAction func sortList(_ sender: UIButton) {
@@ -57,7 +57,8 @@ class MainViewController: ButtonBarPagerTabStripViewController {
     }
  
     override public func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        return [mobileVC, favoriteVC]
+//        return [mobileVC, favoriteVC]
+        return [mobileVC]
     }
     
 }

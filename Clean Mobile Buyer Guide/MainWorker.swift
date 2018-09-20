@@ -1,5 +1,5 @@
 //
-//  MobileListViewModel.swift
+//  MainWorker.swift
 //  Clean Mobile Buyer Guide
 //
 //  Created by ANUWAT SITTICHAK on 20/9/2561 BE.
@@ -7,4 +7,3 @@
 //
 
 import Foundation
-

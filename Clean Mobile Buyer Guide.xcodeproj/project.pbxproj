@@ -11,21 +11,17 @@
 		232329C32153555A00C1D17B /* ConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329C22153555A00C1D17B /* ConnectionController.swift */; };
 		232329C921535FDD00C1D17B /* MobileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329C821535FDD00C1D17B /* MobileListViewController.swift */; };
 		232329CB2153632C00C1D17B /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CA2153632C00C1D17B /* XLPagerTabStrip.framework */; };
-		232329D42153637800C1D17B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CC2153637700C1D17B /* Realm.framework */; };
 		232329D52153637800C1D17B /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CD2153637800C1D17B /* RxCocoa.framework */; };
 		232329D62153637800C1D17B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CE2153637800C1D17B /* SwiftyJSON.framework */; };
 		232329D72153637800C1D17B /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CF2153637800C1D17B /* SDWebImage.framework */; };
 		232329D82153637800C1D17B /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D02153637800C1D17B /* RxBlocking.framework */; };
-		232329D92153637800C1D17B /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D12153637800C1D17B /* RxTest.framework */; };
-		232329DA2153637800C1D17B /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D22153637800C1D17B /* RxSwift.framework */; };
-		232329DB2153637800C1D17B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D32153637800C1D17B /* RealmSwift.framework */; };
 		232329DD215363AC00C1D17B /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329DC215363AC00C1D17B /* Properties.swift */; };
 		232329DF2153642A00C1D17B /* MobileListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329DE2153642A00C1D17B /* MobileListInteractor.swift */; };
 		232329E12153645300C1D17B /* MobileListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329E02153645300C1D17B /* MobileListPresenter.swift */; };
 		232329E32153646300C1D17B /* MobileListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329E22153646300C1D17B /* MobileListWorker.swift */; };
 		232329E7215365E900C1D17B /* MobileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329E6215365E900C1D17B /* MobileCell.swift */; };
 		232329E92153664C00C1D17B /* MobileListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329E82153664C00C1D17B /* MobileListRouter.swift */; };
-		232329EB2153665900C1D17B /* MobileListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329EA2153665900C1D17B /* MobileListViewModel.swift */; };
+		232329EB2153665900C1D17B /* MobileListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329EA2153665900C1D17B /* MobileListModel.swift */; };
 		232329ED215366EA00C1D17B /* MobileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232329EC215366E900C1D17B /* MobileCell.xib */; };
 		232329EF2153671800C1D17B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329EE2153671800C1D17B /* MainViewController.swift */; };
 		232329F12153678900C1D17B /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329F02153678900C1D17B /* FavoriteListViewController.swift */; };
@@ -35,6 +31,23 @@
 		2343BC8D21535168006BBC3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2343BC8B21535168006BBC3A /* LaunchScreen.storyboard */; };
 		2343BC9821535168006BBC3A /* Clean_Mobile_Buyer_GuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2343BC9721535168006BBC3A /* Clean_Mobile_Buyer_GuideTests.swift */; };
 		2343BCA321535168006BBC3A /* Clean_Mobile_Buyer_GuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2343BCA221535168006BBC3A /* Clean_Mobile_Buyer_GuideUITests.swift */; };
+		236C0E6721536C6500021B0E /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C0E6621536C6500021B0E /* AlertController.swift */; };
+		236C0E6921536CA400021B0E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C0E6821536CA400021B0E /* Extension.swift */; };
+		236C0E7421537CDC00021B0E /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D02153637800C1D17B /* RxBlocking.framework */; };
+		236C0E7521537CDC00021B0E /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D02153637800C1D17B /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		236C0E7621537CDC00021B0E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CD2153637800C1D17B /* RxCocoa.framework */; };
+		236C0E7721537CDC00021B0E /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CD2153637800C1D17B /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		236C0E7821537CDC00021B0E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D22153637800C1D17B /* RxSwift.framework */; };
+		236C0E7921537CDC00021B0E /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D22153637800C1D17B /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		236C0E7B21537CDC00021B0E /* RxTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D12153637800C1D17B /* RxTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		236C0E7C21537CDC00021B0E /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CF2153637800C1D17B /* SDWebImage.framework */; };
+		236C0E7D21537CDC00021B0E /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CF2153637800C1D17B /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		236C0E7E21537CDC00021B0E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CE2153637800C1D17B /* SwiftyJSON.framework */; };
+		236C0E7F21537CDC00021B0E /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CE2153637800C1D17B /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		236C0E8121537CDC00021B0E /* XLPagerTabStrip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CA2153632C00C1D17B /* XLPagerTabStrip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		236C0E8221537CDC00021B0E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329BF215354F200C1D17B /* Alamofire.framework */; };
+		236C0E8321537CDC00021B0E /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 232329BF215354F200C1D17B /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2380E4AF2153956A003382A8 /* MobilePhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2380E4AE2153956A003382A8 /* MobilePhone.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +66,27 @@
 			remoteInfo = "Clean Mobile Buyer Guide";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		236C0E6C21537C6700021B0E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				236C0E7F21537CDC00021B0E /* SwiftyJSON.framework in Embed Frameworks */,
+				236C0E8121537CDC00021B0E /* XLPagerTabStrip.framework in Embed Frameworks */,
+				236C0E7921537CDC00021B0E /* RxSwift.framework in Embed Frameworks */,
+				236C0E8321537CDC00021B0E /* Alamofire.framework in Embed Frameworks */,
+				236C0E7721537CDC00021B0E /* RxCocoa.framework in Embed Frameworks */,
+				236C0E7B21537CDC00021B0E /* RxTest.framework in Embed Frameworks */,
+				236C0E7D21537CDC00021B0E /* SDWebImage.framework in Embed Frameworks */,
+				236C0E7521537CDC00021B0E /* RxBlocking.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		232329BF215354F200C1D17B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -73,7 +107,7 @@
 		232329E22153646300C1D17B /* MobileListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListWorker.swift; sourceTree = "<group>"; };
 		232329E6215365E900C1D17B /* MobileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileCell.swift; sourceTree = "<group>"; };
 		232329E82153664C00C1D17B /* MobileListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListRouter.swift; sourceTree = "<group>"; };
-		232329EA2153665900C1D17B /* MobileListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListViewModel.swift; sourceTree = "<group>"; };
+		232329EA2153665900C1D17B /* MobileListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListModel.swift; sourceTree = "<group>"; };
 		232329EC215366E900C1D17B /* MobileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MobileCell.xib; sourceTree = SOURCE_ROOT; };
 		232329EE2153671800C1D17B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		232329F02153678900C1D17B /* FavoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +123,10 @@
 		2343BC9E21535168006BBC3A /* Clean Mobile Buyer GuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Clean Mobile Buyer GuideUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2343BCA221535168006BBC3A /* Clean_Mobile_Buyer_GuideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clean_Mobile_Buyer_GuideUITests.swift; sourceTree = "<group>"; };
 		2343BCA421535168006BBC3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		236C0E6621536C6500021B0E /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		236C0E6821536CA400021B0E /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		236C0E8B21537D6C00021B0E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2380E4AE2153956A003382A8 /* MobilePhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilePhone.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,14 +134,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				232329D42153637800C1D17B /* Realm.framework in Frameworks */,
+				236C0E7E21537CDC00021B0E /* SwiftyJSON.framework in Frameworks */,
+				236C0E8221537CDC00021B0E /* Alamofire.framework in Frameworks */,
+				236C0E7621537CDC00021B0E /* RxCocoa.framework in Frameworks */,
+				236C0E7C21537CDC00021B0E /* SDWebImage.framework in Frameworks */,
 				232329D52153637800C1D17B /* RxCocoa.framework in Frameworks */,
+				236C0E7821537CDC00021B0E /* RxSwift.framework in Frameworks */,
 				232329D62153637800C1D17B /* SwiftyJSON.framework in Frameworks */,
 				232329D72153637800C1D17B /* SDWebImage.framework in Frameworks */,
 				232329D82153637800C1D17B /* RxBlocking.framework in Frameworks */,
-				232329D92153637800C1D17B /* RxTest.framework in Frameworks */,
-				232329DA2153637800C1D17B /* RxSwift.framework in Frameworks */,
-				232329DB2153637800C1D17B /* RealmSwift.framework in Frameworks */,
+				236C0E7421537CDC00021B0E /* RxBlocking.framework in Frameworks */,
 				232329C0215354F200C1D17B /* Alamofire.framework in Frameworks */,
 				232329CB2153632C00C1D17B /* XLPagerTabStrip.framework in Frameworks */,
 			);
@@ -129,6 +169,7 @@
 		232329BE215354F200C1D17B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				236C0E8B21537D6C00021B0E /* XCTest.framework */,
 				232329CC2153637700C1D17B /* Realm.framework */,
 				232329D32153637800C1D17B /* RealmSwift.framework */,
 				232329D02153637800C1D17B /* RxBlocking.framework */,
@@ -151,7 +192,7 @@
 				232329E02153645300C1D17B /* MobileListPresenter.swift */,
 				232329E22153646300C1D17B /* MobileListWorker.swift */,
 				232329E82153664C00C1D17B /* MobileListRouter.swift */,
-				232329EA2153665900C1D17B /* MobileListViewModel.swift */,
+				232329EA2153665900C1D17B /* MobileListModel.swift */,
 			);
 			path = MobileList;
 			sourceTree = "<group>";
@@ -167,6 +208,7 @@
 		232329C621535C6100C1D17B /* MobileDetail */ = {
 			isa = PBXGroup;
 			children = (
+				2380E4AE2153956A003382A8 /* MobilePhone.swift */,
 			);
 			path = MobileDetail;
 			sourceTree = "<group>";
@@ -174,6 +216,8 @@
 		232329C721535C7400C1D17B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				236C0E6621536C6500021B0E /* AlertController.swift */,
+				232329C22153555A00C1D17B /* ConnectionController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -212,10 +256,10 @@
 				2343BC8921535168006BBC3A /* Assets.xcassets */,
 				2343BC8B21535168006BBC3A /* LaunchScreen.storyboard */,
 				2343BC8E21535168006BBC3A /* Info.plist */,
-				232329C22153555A00C1D17B /* ConnectionController.swift */,
 				232329DC215363AC00C1D17B /* Properties.swift */,
 				232329E6215365E900C1D17B /* MobileCell.swift */,
 				232329EE2153671800C1D17B /* MainViewController.swift */,
+				236C0E6821536CA400021B0E /* Extension.swift */,
 			);
 			path = "Clean Mobile Buyer Guide";
 			sourceTree = "<group>";
@@ -249,6 +293,7 @@
 				2343BC7C21535167006BBC3A /* Frameworks */,
 				2343BC7D21535167006BBC3A /* Resources */,
 				232329C12153552700C1D17B /* ShellScript */,
+				236C0E6C21537C6700021B0E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -391,14 +436,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				236C0E6721536C6500021B0E /* AlertController.swift in Sources */,
 				232329C921535FDD00C1D17B /* MobileListViewController.swift in Sources */,
 				232329EF2153671800C1D17B /* MainViewController.swift in Sources */,
 				232329C32153555A00C1D17B /* ConnectionController.swift in Sources */,
+				2380E4AF2153956A003382A8 /* MobilePhone.swift in Sources */,
 				232329E92153664C00C1D17B /* MobileListRouter.swift in Sources */,
 				232329DD215363AC00C1D17B /* Properties.swift in Sources */,
-				232329EB2153665900C1D17B /* MobileListViewModel.swift in Sources */,
+				232329EB2153665900C1D17B /* MobileListModel.swift in Sources */,
 				232329E7215365E900C1D17B /* MobileCell.swift in Sources */,
 				232329DF2153642A00C1D17B /* MobileListInteractor.swift in Sources */,
+				236C0E6921536CA400021B0E /* Extension.swift in Sources */,
 				232329F12153678900C1D17B /* FavoriteListViewController.swift in Sources */,
 				232329E12153645300C1D17B /* MobileListPresenter.swift in Sources */,
 				2343BC8321535168006BBC3A /* AppDelegate.swift in Sources */,
