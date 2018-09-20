@@ -20,8 +20,14 @@
 		232329DA2153637800C1D17B /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D22153637800C1D17B /* RxSwift.framework */; };
 		232329DB2153637800C1D17B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D32153637800C1D17B /* RealmSwift.framework */; };
 		232329DD215363AC00C1D17B /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329DC215363AC00C1D17B /* Properties.swift */; };
+		232329DF2153642A00C1D17B /* MobileListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329DE2153642A00C1D17B /* MobileListInteractor.swift */; };
+		232329E12153645300C1D17B /* MobileListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329E02153645300C1D17B /* MobileListPresenter.swift */; };
+		232329E32153646300C1D17B /* MobileListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329E22153646300C1D17B /* MobileListWorker.swift */; };
+		232329E7215365E900C1D17B /* MobileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329E6215365E900C1D17B /* MobileCell.swift */; };
+		232329E92153664C00C1D17B /* MobileListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329E82153664C00C1D17B /* MobileListRouter.swift */; };
+		232329EB2153665900C1D17B /* MobileListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329EA2153665900C1D17B /* MobileListViewModel.swift */; };
+		232329ED215366EA00C1D17B /* MobileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232329EC215366E900C1D17B /* MobileCell.xib */; };
 		2343BC8321535168006BBC3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2343BC8221535168006BBC3A /* AppDelegate.swift */; };
-		2343BC8521535168006BBC3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2343BC8421535168006BBC3A /* ViewController.swift */; };
 		2343BC8821535168006BBC3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2343BC8621535168006BBC3A /* Main.storyboard */; };
 		2343BC8A21535168006BBC3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2343BC8921535168006BBC3A /* Assets.xcassets */; };
 		2343BC8D21535168006BBC3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2343BC8B21535168006BBC3A /* LaunchScreen.storyboard */; };
@@ -60,9 +66,15 @@
 		232329D22153637800C1D17B /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		232329D32153637800C1D17B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		232329DC215363AC00C1D17B /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
+		232329DE2153642A00C1D17B /* MobileListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListInteractor.swift; sourceTree = "<group>"; };
+		232329E02153645300C1D17B /* MobileListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListPresenter.swift; sourceTree = "<group>"; };
+		232329E22153646300C1D17B /* MobileListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListWorker.swift; sourceTree = "<group>"; };
+		232329E6215365E900C1D17B /* MobileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileCell.swift; sourceTree = "<group>"; };
+		232329E82153664C00C1D17B /* MobileListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListRouter.swift; sourceTree = "<group>"; };
+		232329EA2153665900C1D17B /* MobileListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListViewModel.swift; sourceTree = "<group>"; };
+		232329EC215366E900C1D17B /* MobileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MobileCell.xib; sourceTree = SOURCE_ROOT; };
 		2343BC7F21535167006BBC3A /* Clean Mobile Buyer Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clean Mobile Buyer Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2343BC8221535168006BBC3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2343BC8421535168006BBC3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2343BC8721535168006BBC3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2343BC8921535168006BBC3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2343BC8C21535168006BBC3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,6 +143,11 @@
 			isa = PBXGroup;
 			children = (
 				232329C821535FDD00C1D17B /* MobileListViewController.swift */,
+				232329DE2153642A00C1D17B /* MobileListInteractor.swift */,
+				232329E02153645300C1D17B /* MobileListPresenter.swift */,
+				232329E22153646300C1D17B /* MobileListWorker.swift */,
+				232329E82153664C00C1D17B /* MobileListRouter.swift */,
+				232329EA2153665900C1D17B /* MobileListViewModel.swift */,
 			);
 			path = MobileList;
 			sourceTree = "<group>";
@@ -185,13 +202,14 @@
 				232329C521535C5500C1D17B /* FavoriteList */,
 				232329C421535C4600C1D17B /* MobileList */,
 				2343BC8221535168006BBC3A /* AppDelegate.swift */,
-				2343BC8421535168006BBC3A /* ViewController.swift */,
+				232329EC215366E900C1D17B /* MobileCell.xib */,
 				2343BC8621535168006BBC3A /* Main.storyboard */,
 				2343BC8921535168006BBC3A /* Assets.xcassets */,
 				2343BC8B21535168006BBC3A /* LaunchScreen.storyboard */,
 				2343BC8E21535168006BBC3A /* Info.plist */,
 				232329C22153555A00C1D17B /* ConnectionController.swift */,
 				232329DC215363AC00C1D17B /* Properties.swift */,
+				232329E6215365E900C1D17B /* MobileCell.swift */,
 			);
 			path = "Clean Mobile Buyer Guide";
 			sourceTree = "<group>";
@@ -325,6 +343,7 @@
 				2343BC8D21535168006BBC3A /* LaunchScreen.storyboard in Resources */,
 				2343BC8A21535168006BBC3A /* Assets.xcassets in Resources */,
 				2343BC8821535168006BBC3A /* Main.storyboard in Resources */,
+				232329ED215366EA00C1D17B /* MobileCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,10 +386,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				232329C921535FDD00C1D17B /* MobileListViewController.swift in Sources */,
-				2343BC8521535168006BBC3A /* ViewController.swift in Sources */,
 				232329C32153555A00C1D17B /* ConnectionController.swift in Sources */,
+				232329E92153664C00C1D17B /* MobileListRouter.swift in Sources */,
 				232329DD215363AC00C1D17B /* Properties.swift in Sources */,
+				232329EB2153665900C1D17B /* MobileListViewModel.swift in Sources */,
+				232329E7215365E900C1D17B /* MobileCell.swift in Sources */,
+				232329DF2153642A00C1D17B /* MobileListInteractor.swift in Sources */,
+				232329E12153645300C1D17B /* MobileListPresenter.swift in Sources */,
 				2343BC8321535168006BBC3A /* AppDelegate.swift in Sources */,
+				232329E32153646300C1D17B /* MobileListWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
