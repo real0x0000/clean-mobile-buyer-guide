@@ -56,6 +56,10 @@
 		23DB869021539BF200F6D70A /* FavoriteListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB868F21539BF200F6D70A /* FavoriteListWorker.swift */; };
 		23DB869221539BFB00F6D70A /* FavoriteListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB869121539BFB00F6D70A /* FavoriteListRouter.swift */; };
 		23DB86942153AFD900F6D70A /* MobileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB86932153AFD900F6D70A /* MobileDetailViewController.swift */; };
+		23DB869A2153B09300F6D70A /* MobileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB86992153B09300F6D70A /* MobileImageCell.swift */; };
+		23DB869C2153B1D300F6D70A /* MobileDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB869B2153B1D300F6D70A /* MobileDetailInteractor.swift */; };
+		23DB869E2153B1DC00F6D70A /* MobileDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB869D2153B1DC00F6D70A /* MobileDetailWorker.swift */; };
+		23DB86A02153B1E500F6D70A /* MobileDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB869F2153B1E500F6D70A /* MobileDetailPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +147,10 @@
 		23DB868F21539BF200F6D70A /* FavoriteListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListWorker.swift; sourceTree = "<group>"; };
 		23DB869121539BFB00F6D70A /* FavoriteListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListRouter.swift; sourceTree = "<group>"; };
 		23DB86932153AFD900F6D70A /* MobileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailViewController.swift; sourceTree = "<group>"; };
+		23DB86992153B09300F6D70A /* MobileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileImageCell.swift; sourceTree = "<group>"; };
+		23DB869B2153B1D300F6D70A /* MobileDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailInteractor.swift; sourceTree = "<group>"; };
+		23DB869D2153B1DC00F6D70A /* MobileDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailWorker.swift; sourceTree = "<group>"; };
+		23DB869F2153B1E500F6D70A /* MobileDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,7 +235,11 @@
 		232329C621535C6100C1D17B /* MobileDetail */ = {
 			isa = PBXGroup;
 			children = (
+				23DB86992153B09300F6D70A /* MobileImageCell.swift */,
 				23DB86932153AFD900F6D70A /* MobileDetailViewController.swift */,
+				23DB869B2153B1D300F6D70A /* MobileDetailInteractor.swift */,
+				23DB869D2153B1DC00F6D70A /* MobileDetailWorker.swift */,
+				23DB869F2153B1E500F6D70A /* MobileDetailPresenter.swift */,
 			);
 			path = MobileDetail;
 			sourceTree = "<group>";
@@ -479,14 +491,17 @@
 				23DB86942153AFD900F6D70A /* MobileDetailViewController.swift in Sources */,
 				23DB86852153974000F6D70A /* MainWorker.swift in Sources */,
 				236C0E6721536C6500021B0E /* AlertController.swift in Sources */,
+				23DB869A2153B09300F6D70A /* MobileImageCell.swift in Sources */,
 				232329C921535FDD00C1D17B /* MobileListViewController.swift in Sources */,
 				232329EF2153671800C1D17B /* MainViewController.swift in Sources */,
 				232329C32153555A00C1D17B /* ConnectionController.swift in Sources */,
 				2380E4AF2153956A003382A8 /* MobilePhone.swift in Sources */,
+				23DB869E2153B1DC00F6D70A /* MobileDetailWorker.swift in Sources */,
 				23DB86892153984C00F6D70A /* MainModel.swift in Sources */,
 				232329E92153664C00C1D17B /* MobileListRouter.swift in Sources */,
 				232329DD215363AC00C1D17B /* Properties.swift in Sources */,
 				23DB868C21539BDF00F6D70A /* FavoriteListInteractor.swift in Sources */,
+				23DB86A02153B1E500F6D70A /* MobileDetailPresenter.swift in Sources */,
 				232329E7215365E900C1D17B /* MobileCell.swift in Sources */,
 				232329DF2153642A00C1D17B /* MobileListInteractor.swift in Sources */,
 				236C0E6921536CA400021B0E /* N.swift in Sources */,
@@ -498,6 +513,7 @@
 				232329E32153646300C1D17B /* MobileListWorker.swift in Sources */,
 				23DB868E21539BE700F6D70A /* FavoriteListPresenter.swift in Sources */,
 				23DB869221539BFB00F6D70A /* FavoriteListRouter.swift in Sources */,
+				23DB869C2153B1D300F6D70A /* MobileDetailInteractor.swift in Sources */,
 				23DB8683215396FB00F6D70A /* MainInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

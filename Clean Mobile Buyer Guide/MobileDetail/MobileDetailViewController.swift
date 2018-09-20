@@ -8,9 +8,15 @@
 
 import UIKit
 
-class MobileDetailViewController: UIViewController {
-    
-    fileprivate var mobile: MobilePhone!
+protocol MDDisplayLogic: class
+{
+    func successGetMobileImages(imageUrls: [String])
+    func errorGetMobileImages(errorMsg: String?)
+}
+
+class MobileDetailViewController: UIViewController, MDDisplayLogic {
+ 
+    fileprivate var interactor: MDInteractorBusinessLogic?
     fileprivate var mobileImagesUrl: [String] = []
     
     @IBOutlet weak var priceLabel: UILabel!
@@ -21,27 +27,14 @@ class MobileDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initCollectionView()
-//        vm.rx_mobile
-//            .filter { $0 != nil }
-//            .map { $0! }
-//            .subscribe(onNext: { [unowned self] in
-//                self.mobile = $0
-//                self.displayMobile()
-//                self.vm.getMobileImages($0.id)
-//            }).disposed(by: disposeBag)
-//        vm.rx_mobileImagesUrl
-//            .filter { $0.count != 0 }
-//            .subscribe(onNext: { [unowned self] in
-//                self.mobileImagesUrl = $0
-//                self.imageCollectionView.reloadData()
-//            }).disposed(by: disposeBag)
+        interactor?.getMobileImages(0)
     }
     
     fileprivate func displayMobile() {
-        navigationItem.title = mobile.name
-        priceLabel.text = "Price: \(mobile.price)"
-        ratingLabel.text = "Rating: \(mobile.rating)"
-        descLabel.text = mobile.desc
+//        navigationItem.title = mobile.name
+//        priceLabel.text = "Price: \(mobile.price)"
+//        ratingLabel.text = "Rating: \(mobile.rating)"
+//        descLabel.text = mobile.desc
     }
     
 }
@@ -73,6 +66,18 @@ extension MobileDetailViewController: UICollectionViewDataSource, UICollectionVi
         let cellHeight = screenHeight * 0.35
         let cellWidth = (screenHeight * 4) / 3
         return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    func successGetMobileImages(imageUrls: [String]) {
+        mobileImagesUrl = imageUrls
+        imageCollectionView.reloadData()
+    }
+    
+    func errorGetMobileImages(errorMsg: String?) {
+        let alertController = UIAlertController(title: nil, message: errorMsg, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
     
 }
