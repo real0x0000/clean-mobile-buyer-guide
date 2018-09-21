@@ -40,7 +40,7 @@ class MobileListViewController: UITableViewController, MLDisplayLogic {
     }
     
     private func setup() {
-        let interactor = MobileListInteractor()
+        let interactor = MobileListInteractor(worker: MobileListWorker())
         let presenter = MobileListPresenter()
         let router = MobileListRouter()
         self.interactor = interactor

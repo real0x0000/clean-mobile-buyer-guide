@@ -58,7 +58,7 @@ class MainViewController: ButtonBarPagerTabStripViewController, MainDisplayLogic
     }
     
     private func setup() {
-        let interactor = MainInteractor()
+        let interactor = MainInteractor(worker: MainWorker())
         let presenter = MainPresenter()
         self.interactor = interactor
         self.dataStore = interactor

@@ -299,9 +299,9 @@
 			children = (
 				2343BC8621535168006BBC3A /* Main.storyboard */,
 				232329EE2153671800C1D17B /* MainViewController.swift */,
-				23DB86842153974000F6D70A /* MainWorker.swift */,
 				23DB8682215396FB00F6D70A /* MainInteractor.swift */,
 				23DB8686215397D200F6D70A /* MainPresenter.swift */,
+				23DB86842153974000F6D70A /* MainWorker.swift */,
 				23DB86882153984C00F6D70A /* MainModel.swift */,
 			);
 			path = Main;

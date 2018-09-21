@@ -21,8 +21,12 @@ protocol MLDataStore {
 class MobileListInteractor: MLInteractorBusinessLogic, MLDataStore {
     
     var presenter: MLPresentationLogic?
-    var worker: MobileListWorker? = MobileListWorker()
+    var worker: MobileListWorker?
     var mobileList: [MobilePhone] = []
+    
+    init(worker: MobileListWorker) {
+        self.worker = worker
+    }
     
     func getList(list: [MobilePhone], sortType: SortType) {
         mobileList = list

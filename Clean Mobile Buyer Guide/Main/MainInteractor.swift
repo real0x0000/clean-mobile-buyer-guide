@@ -21,7 +21,11 @@ class MainInteractor: MainInteractorBusinessLogic, MainInteractorDataStore {
 
     var sortType: SortType = .none
     var presenter: MainPresentationLogic?
-    var worker: MainWorker? = MainWorker()
+    var worker: MainWorker?
+    
+    init(worker: MainWorker) {
+        self.worker = worker
+    }
     
     func getMobileList() {
         worker?.getMobileList(success: { (list) in
