@@ -52,6 +52,7 @@ class MobileListViewController: UITableViewController, MLDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "MobileCell", bundle: Bundle.main), forCellReuseIdentifier: "MobileCell")
+        tableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
