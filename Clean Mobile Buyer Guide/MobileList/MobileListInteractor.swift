@@ -12,10 +12,15 @@ protocol MLInteractorBusinessLogic {
     func sortList(list: [MobilePhone], sortType: SortType)
 }
 
-class MobileListInteractor: MLInteractorBusinessLogic {
+protocol MLDataStore {
+    var mobilePhone: MobilePhone? { get set }
+}
+
+class MobileListInteractor: MLInteractorBusinessLogic, MLDataStore {
     
     var presenter: MLPresentationLogic?
     var worker: MobileListWorker?
+    var mobilePhone: MobilePhone?
         
     func sortList(list: [MobilePhone], sortType: SortType) {
         worker = MobileListWorker()

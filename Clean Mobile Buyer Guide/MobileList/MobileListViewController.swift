@@ -18,6 +18,7 @@ class MobileListViewController: UITableViewController, MLDisplayLogic {
     
     var itemInfo: IndicatorInfo = "View"
     var interactor: MLInteractorBusinessLogic?
+    var router: (NSObjectProtocol & MobileRoutingLogic & MobileDataPassing)?
     fileprivate var mobileList: [MobilePhone] = []
    
     init(itemInfo: IndicatorInfo) {
@@ -39,9 +40,13 @@ class MobileListViewController: UITableViewController, MLDisplayLogic {
     private func setup() {
         let interactor = MobileListInteractor()
         let presenter = MobileListPresenter()
+        let router = MobileListRouter()
         self.interactor = interactor
+        self.router = router
         interactor.presenter = presenter
         presenter.viewController = self
+        router.viewController = self
+        router.dataStore = interactor
     }
     
     override func viewDidLoad() {
@@ -73,6 +78,13 @@ class MobileListViewController: UITableViewController, MLDisplayLogic {
         cell.favoriteButton.tag = indexPath.row
         cell.favoriteButton.addTarget(self, action: #selector(MobileListViewController.favorite(_:)), for: .touchUpInside)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let mobile = mobileList[indexPath.row]
+        router?.dataStore?.mobilePhone = mobile
+        router?.routeToDetail()
     }
     
     @objc fileprivate func favorite(_ sender: UIButton) {
