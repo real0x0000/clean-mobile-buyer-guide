@@ -25,23 +25,21 @@ class MobileListInteractor: MLInteractorBusinessLogic, MLDataStore {
     var mobileList: [MobilePhone] = []
     
     func getList(list: [MobilePhone], sortType: SortType) {
+        mobileList = list
         if let sortList = worker?.sortList(list: list, sortType: sortType) {
-            mobileList = sortList
             self.presenter?.presentList(list: sortList)
         }
         else {
-            mobileList = list
             self.presenter?.presentList(list: list)
         }
     }
     
     func getFavoriteList(list: [MobilePhone], sortType: SortType) {
+        mobileList = list
         if let favList = worker?.getFavoriteList(list: list, sortType: sortType) {
-            mobileList = favList
             presenter?.presentList(list: favList)
         }
         else {
-            mobileList = list
             presenter?.presentList(list: list)
         }
     }
@@ -50,11 +48,11 @@ class MobileListInteractor: MLInteractorBusinessLogic, MLDataStore {
         let mobile = mobileList[itemIndex]
         if isFavorite {
             if !(mobile.isFavorite) {
-//                NotificationCenter.default.post(name: Notification.Name.updateFavorite, object: nil, userInfo: ["id": mobile.id, "isFavorite": true])
+                NotificationCenter.default.post(name: Notification.Name.updateFavorite, object: nil, userInfo: ["id": mobile.id, "isFavorite": true])
             }
         }
         else {
-//            NotificationCenter.default.post(name: Notification.Name.updateFavorite, object: nil, userInfo: ["id": mobile.id, "isFavorite": false])
+            NotificationCenter.default.post(name: Notification.Name.updateFavorite, object: nil, userInfo: ["id": mobile.id, "isFavorite": false])
         }
     }
     
