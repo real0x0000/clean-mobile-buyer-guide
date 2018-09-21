@@ -9,12 +9,17 @@
 import Foundation
 
 protocol MDPresentationLogic {
+    func presentMobileData(data: MobilePhone)
     func presentGetImagesResult(urls: [String], isError: Bool, errorMsg: String?)
 }
 
 class MobileDetailPresenter: MDPresentationLogic {
     
     weak var viewController: MDDisplayLogic?
+    
+    func presentMobileData(data: MobilePhone) {
+        viewController?.presentMobileData(data: data)
+    }
     
     func presentGetImagesResult(urls: [String], isError: Bool, errorMsg: String?) {
         if isError {

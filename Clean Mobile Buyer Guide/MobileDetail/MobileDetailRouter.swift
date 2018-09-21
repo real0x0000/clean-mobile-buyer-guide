@@ -8,15 +8,11 @@
 
 import Foundation
 
-@objc protocol MobileDetailRoutingLogic {
-    
-}
-
 protocol MobileDetailPassing {
     var dataStore: MDDataStore? { get set }
 }
 
-class MobileDetailRouter: NSObject, MobileDetailRoutingLogic, MobileDetailPassing {
+class MobileDetailRouter: NSObject, MobileDetailPassing {
     
     weak var viewController: MobileDetailViewController?
     var dataStore: MDDataStore?

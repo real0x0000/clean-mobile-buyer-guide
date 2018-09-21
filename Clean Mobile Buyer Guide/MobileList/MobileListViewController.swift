@@ -11,18 +11,20 @@ import XLPagerTabStrip
 
 protocol MLDisplayLogic: class
 {
-    func presentSortList(list: [MobilePhone])
+    func presentList(list: [MobilePhone])
 }
 
 class MobileListViewController: UITableViewController, MLDisplayLogic {
     
-    var itemInfo: IndicatorInfo = "View"
     var interactor: MLInteractorBusinessLogic?
     var router: (NSObjectProtocol & MobileRoutingLogic & MobileDataPassing)?
+    fileprivate var itemInfo: IndicatorInfo = "View"
+    fileprivate var isFavorite = false
     fileprivate var mobileList: [MobilePhone] = []
    
-    init(itemInfo: IndicatorInfo) {
+    init(itemInfo: IndicatorInfo, isFavorite: Bool) {
         self.itemInfo = itemInfo
+        self.isFavorite = isFavorite
         super.init(nibName: nil, bundle: nil)
         setup()
     }
@@ -58,8 +60,8 @@ class MobileListViewController: UITableViewController, MLDisplayLogic {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
-    func presentSortList(list: [MobilePhone]) {
+
+    func presentList(list: [MobilePhone]) {
         mobileList = list
         tableView.reloadData()
     }
@@ -86,9 +88,31 @@ class MobileListViewController: UITableViewController, MLDisplayLogic {
         router?.routeToDetail(itemIndex: indexPath.row)
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return isFavorite
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            alertRemoveFavorite(indexPath)
+        }
+    }
+
+    fileprivate func alertRemoveFavorite(_ indexPath: IndexPath) {
+        let mobile = mobileList[indexPath.row]
+        let alertController = UIAlertController(title: "Are you sure you want to delete \(mobile.name) from favorite?", message: nil, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+            self.interactor?.updateFavorite(itemIndex: indexPath.row, isFavorite: false)
+        })
+        alertController.addAction(cancelAction)
+        alertController.addAction(deleteAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
     @objc fileprivate func favorite(_ sender: UIButton) {
         let row = sender.tag
-        interactor?.updateFavorite(itemIndex: row)
+        interactor?.updateFavorite(itemIndex: row, isFavorite: true)
     }
     
 }

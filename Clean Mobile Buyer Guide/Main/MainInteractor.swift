@@ -21,10 +21,9 @@ class MainInteractor: MainInteractorBusinessLogic, MainInteractorDataStore {
 
     var sortType: SortType = .none
     var presenter: MainPresentationLogic?
-    var worker: MainWorker?
+    var worker: MainWorker? = MainWorker()
     
     func getMobileList() {
-        worker = MainWorker()
         worker?.getMobileList(success: { (list) in
             self.presenter?.presentGetListResults(response: MainModel.Response(list: list, isError: false, message: nil))
         }, failure: { (errorMsg) in
@@ -33,7 +32,6 @@ class MainInteractor: MainInteractorBusinessLogic, MainInteractorDataStore {
     }
     
     func favoriteMobile(list: [MobilePhone], id: Int, isFavorite: Bool) {
-        worker = MainWorker()
         if let updateList = worker?.favoriteMobile(list: list, id: id, isFavorite: isFavorite) {
             self.presenter?.presentUpdateList(list: updateList)
         }

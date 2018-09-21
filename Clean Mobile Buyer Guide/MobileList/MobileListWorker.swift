@@ -10,6 +10,12 @@ import UIKit
 
 class MobileListWorker {
     
+    func getFavoriteList(list: [MobilePhone], sortType: SortType) -> [MobilePhone] {
+        let favList = list.filter { $0.isFavorite }
+        let sList = sortList(list: favList, sortType: sortType)
+        return sList
+    }
+    
     func sortList(list: [MobilePhone], sortType: SortType) -> [MobilePhone] {
         var sortList: [MobilePhone] = []
         switch sortType {

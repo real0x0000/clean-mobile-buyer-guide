@@ -9,15 +9,15 @@
 import Foundation
 
 protocol MLPresentationLogic {
-    func presentSortList(list: [MobilePhone])
+    func presentList(list: [MobilePhone])
 }
 
 class MobileListPresenter: MLPresentationLogic {
     
     weak var viewController: MLDisplayLogic?
-
-    func presentSortList(list: [MobilePhone]) {
-        viewController?.presentSortList(list: list)
+    
+    func presentList(list: [MobilePhone]) {
+        viewController?.presentList(list: list)
     }
     
 }

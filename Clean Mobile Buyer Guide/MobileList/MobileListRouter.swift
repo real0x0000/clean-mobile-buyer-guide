@@ -23,8 +23,9 @@ class MobileListRouter: NSObject, MobileRoutingLogic, MobileDataPassing {
     
     func routeToDetail(itemIndex: Int) {
         guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MOBILE_DETAIL") as? MobileDetailViewController else { return }
-        var detailDataStore = vc.router!.dataStore!
-        passData(source: dataStore!, itemIndex: itemIndex, destination: &detailDataStore)
+        if var detailDataStore = vc.router?.dataStore {
+            passData(source: dataStore!, itemIndex: itemIndex, destination: &detailDataStore)
+        }
         viewController?.show(vc, sender: nil)
     }
     

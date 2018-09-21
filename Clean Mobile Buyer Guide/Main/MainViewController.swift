@@ -19,8 +19,8 @@ protocol MainDisplayLogic: class
 
 class MainViewController: ButtonBarPagerTabStripViewController, MainDisplayLogic {
     
-    fileprivate let mobileVC = MobileListViewController(itemInfo: "All")
-    fileprivate let favoriteVC = FavoriteListViewController(itemInfo: "Favorite")
+    fileprivate let mobileVC = MobileListViewController(itemInfo: "All", isFavorite: false)
+    fileprivate let favoriteVC = MobileListViewController(itemInfo: "Favorite", isFavorite: true)
     fileprivate var interactor: MainInteractorBusinessLogic?
     fileprivate var dataStore: MainInteractorDataStore?
     fileprivate var mobileList: [MobilePhone] = []
@@ -120,7 +120,7 @@ class MainViewController: ButtonBarPagerTabStripViewController, MainDisplayLogic
     
     fileprivate func updateList(list: [MobilePhone], sortType: SortType) {
         mobileList = list
-        mobileVC.interactor?.sortList(list: list, sortType: sortType)
+        mobileVC.interactor?.getList(list: list, sortType: sortType)
         favoriteVC.interactor?.getFavoriteList(list: list, sortType: sortType)
     }
     

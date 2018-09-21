@@ -10,14 +10,15 @@ import UIKit
 
 protocol MDDisplayLogic: class
 {
+    func presentMobileData(data: MobilePhone)
     func successGetMobileImages(imageUrls: [String])
     func errorGetMobileImages(errorMsg: String?)
 }
 
-class MobileDetailViewController: UIViewController, MDDisplayLogic {
+final class MobileDetailViewController: UIViewController, MDDisplayLogic {
  
-    var router: (NSObjectProtocol & MobileDetailRoutingLogic & MobileDetailPassing)?
-    fileprivate var interactor: MDInteractorBusinessLogic?
+    var router: (NSObjectProtocol & MobileDetailPassing)?
+    var interactor: MDInteractorBusinessLogic?
     fileprivate var mobileImagesUrl: [String] = []
     
     @IBOutlet weak var priceLabel: UILabel!
@@ -50,19 +51,17 @@ class MobileDetailViewController: UIViewController, MDDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         initCollectionView()
-        if let mobileData = router?.dataStore?.mobileData {
-            interactor?.getMobileImages(mobileData.id)
-            displayMobile(mobileData)
-        }
-    }
-    
-    fileprivate func displayMobile(_ mobile: MobilePhone) {
-        navigationItem.title = mobile.name
-        priceLabel.text = "Price: \(mobile.price)"
-        ratingLabel.text = "Rating: \(mobile.rating)"
-        descLabel.text = mobile.desc
+        interactor?.getMobileData()
+        interactor?.getMobileImages()
     }
 
+    func presentMobileData(data: MobilePhone) {
+        navigationItem.title = data.name
+        priceLabel.text = "Price: \(data.price)"
+        ratingLabel.text = "Rating: \(data.rating)"
+        descLabel.text = data.desc
+    }
+    
 }
 
 extension MobileDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {

@@ -9,8 +9,9 @@
 import UIKit
 
 protocol MLInteractorBusinessLogic {
-    func sortList(list: [MobilePhone], sortType: SortType)
-    func updateFavorite(itemIndex: Int)
+    func getList(list: [MobilePhone], sortType: SortType)
+    func getFavoriteList(list: [MobilePhone], sortType: SortType)
+    func updateFavorite(itemIndex: Int, isFavorite: Bool)
 }
 
 protocol MLDataStore {
@@ -20,25 +21,40 @@ protocol MLDataStore {
 class MobileListInteractor: MLInteractorBusinessLogic, MLDataStore {
     
     var presenter: MLPresentationLogic?
-    var worker: MobileListWorker?
+    var worker: MobileListWorker? = MobileListWorker()
     var mobileList: [MobilePhone] = []
     
-    func sortList(list: [MobilePhone], sortType: SortType) {
-        worker = MobileListWorker()
+    func getList(list: [MobilePhone], sortType: SortType) {
         if let sortList = worker?.sortList(list: list, sortType: sortType) {
             mobileList = sortList
-            self.presenter?.presentSortList(list: sortList)
+            self.presenter?.presentList(list: sortList)
         }
         else {
             mobileList = list
-            self.presenter?.presentSortList(list: list)
+            self.presenter?.presentList(list: list)
         }
     }
     
-    func updateFavorite(itemIndex: Int) {
+    func getFavoriteList(list: [MobilePhone], sortType: SortType) {
+        if let favList = worker?.getFavoriteList(list: list, sortType: sortType) {
+            mobileList = favList
+            presenter?.presentList(list: favList)
+        }
+        else {
+            mobileList = list
+            presenter?.presentList(list: list)
+        }
+    }
+    
+    func updateFavorite(itemIndex: Int, isFavorite: Bool) {
         let mobile = mobileList[itemIndex]
-        if !(mobile.isFavorite) {
-            NotificationCenter.default.post(name: Notification.Name.updateFavorite, object: nil, userInfo: ["id": mobile.id, "isFavorite": true])
+        if isFavorite {
+            if !(mobile.isFavorite) {
+//                NotificationCenter.default.post(name: Notification.Name.updateFavorite, object: nil, userInfo: ["id": mobile.id, "isFavorite": true])
+            }
+        }
+        else {
+//            NotificationCenter.default.post(name: Notification.Name.updateFavorite, object: nil, userInfo: ["id": mobile.id, "isFavorite": false])
         }
     }
     
