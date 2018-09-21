@@ -11,10 +11,8 @@
 		232329C32153555A00C1D17B /* ConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329C22153555A00C1D17B /* ConnectionController.swift */; };
 		232329C921535FDD00C1D17B /* MobileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329C821535FDD00C1D17B /* MobileListViewController.swift */; };
 		232329CB2153632C00C1D17B /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CA2153632C00C1D17B /* XLPagerTabStrip.framework */; };
-		232329D52153637800C1D17B /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CD2153637800C1D17B /* RxCocoa.framework */; };
 		232329D62153637800C1D17B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CE2153637800C1D17B /* SwiftyJSON.framework */; };
 		232329D72153637800C1D17B /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CF2153637800C1D17B /* SDWebImage.framework */; };
-		232329D82153637800C1D17B /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D02153637800C1D17B /* RxBlocking.framework */; };
 		232329DD215363AC00C1D17B /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329DC215363AC00C1D17B /* Properties.swift */; };
 		232329DF2153642A00C1D17B /* MobileListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329DE2153642A00C1D17B /* MobileListInteractor.swift */; };
 		232329E12153645300C1D17B /* MobileListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329E02153645300C1D17B /* MobileListPresenter.swift */; };
@@ -31,15 +29,14 @@
 		2343BC8D21535168006BBC3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2343BC8B21535168006BBC3A /* LaunchScreen.storyboard */; };
 		2343BC9821535168006BBC3A /* Clean_Mobile_Buyer_GuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2343BC9721535168006BBC3A /* Clean_Mobile_Buyer_GuideTests.swift */; };
 		2343BCA321535168006BBC3A /* Clean_Mobile_Buyer_GuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2343BCA221535168006BBC3A /* Clean_Mobile_Buyer_GuideUITests.swift */; };
+		235180472154806F00477B25 /* NVActivityIndicatorViewAppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235180462154806F00477B25 /* NVActivityIndicatorViewAppExtension.framework */; };
+		235180492154809500477B25 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235180482154809500477B25 /* NVActivityIndicatorView.framework */; };
+		2351804A215480B600477B25 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235180482154809500477B25 /* NVActivityIndicatorView.framework */; };
+		2351804B215480B600477B25 /* NVActivityIndicatorView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 235180482154809500477B25 /* NVActivityIndicatorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2351804E215481A800477B25 /* NVActivityIndicatorViewAppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235180462154806F00477B25 /* NVActivityIndicatorViewAppExtension.framework */; };
+		2351804F215481A800477B25 /* NVActivityIndicatorViewAppExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 235180462154806F00477B25 /* NVActivityIndicatorViewAppExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		236C0E6721536C6500021B0E /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C0E6621536C6500021B0E /* AlertController.swift */; };
-		236C0E6921536CA400021B0E /* N.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C0E6821536CA400021B0E /* N.swift */; };
-		236C0E7421537CDC00021B0E /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D02153637800C1D17B /* RxBlocking.framework */; };
-		236C0E7521537CDC00021B0E /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D02153637800C1D17B /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		236C0E7621537CDC00021B0E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CD2153637800C1D17B /* RxCocoa.framework */; };
-		236C0E7721537CDC00021B0E /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CD2153637800C1D17B /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		236C0E7821537CDC00021B0E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D22153637800C1D17B /* RxSwift.framework */; };
-		236C0E7921537CDC00021B0E /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D22153637800C1D17B /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		236C0E7B21537CDC00021B0E /* RxTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 232329D12153637800C1D17B /* RxTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		236C0E6921536CA400021B0E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C0E6821536CA400021B0E /* Extension.swift */; };
 		236C0E7C21537CDC00021B0E /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CF2153637800C1D17B /* SDWebImage.framework */; };
 		236C0E7D21537CDC00021B0E /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CF2153637800C1D17B /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		236C0E7E21537CDC00021B0E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232329CE2153637800C1D17B /* SwiftyJSON.framework */; };
@@ -87,14 +84,12 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2351804F215481A800477B25 /* NVActivityIndicatorViewAppExtension.framework in Embed Frameworks */,
 				236C0E7F21537CDC00021B0E /* SwiftyJSON.framework in Embed Frameworks */,
 				236C0E8121537CDC00021B0E /* XLPagerTabStrip.framework in Embed Frameworks */,
-				236C0E7921537CDC00021B0E /* RxSwift.framework in Embed Frameworks */,
 				236C0E8321537CDC00021B0E /* Alamofire.framework in Embed Frameworks */,
-				236C0E7721537CDC00021B0E /* RxCocoa.framework in Embed Frameworks */,
-				236C0E7B21537CDC00021B0E /* RxTest.framework in Embed Frameworks */,
 				236C0E7D21537CDC00021B0E /* SDWebImage.framework in Embed Frameworks */,
-				236C0E7521537CDC00021B0E /* RxBlocking.framework in Embed Frameworks */,
+				2351804B215480B600477B25 /* NVActivityIndicatorView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,8 +131,10 @@
 		2343BC9E21535168006BBC3A /* Clean Mobile Buyer GuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Clean Mobile Buyer GuideUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2343BCA221535168006BBC3A /* Clean_Mobile_Buyer_GuideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clean_Mobile_Buyer_GuideUITests.swift; sourceTree = "<group>"; };
 		2343BCA421535168006BBC3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		235180462154806F00477B25 /* NVActivityIndicatorViewAppExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorViewAppExtension.framework; path = Carthage/Build/iOS/NVActivityIndicatorViewAppExtension.framework; sourceTree = "<group>"; };
+		235180482154809500477B25 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
 		236C0E6621536C6500021B0E /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
-		236C0E6821536CA400021B0E /* N.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N.swift; sourceTree = "<group>"; };
+		236C0E6821536CA400021B0E /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		236C0E8B21537D6C00021B0E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2380E4AE2153956A003382A8 /* MobilePhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilePhone.swift; sourceTree = "<group>"; };
 		23DB8682215396FB00F6D70A /* MainInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
@@ -160,16 +157,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				235180492154809500477B25 /* NVActivityIndicatorView.framework in Frameworks */,
+				235180472154806F00477B25 /* NVActivityIndicatorViewAppExtension.framework in Frameworks */,
 				236C0E7E21537CDC00021B0E /* SwiftyJSON.framework in Frameworks */,
 				236C0E8221537CDC00021B0E /* Alamofire.framework in Frameworks */,
-				236C0E7621537CDC00021B0E /* RxCocoa.framework in Frameworks */,
+				2351804A215480B600477B25 /* NVActivityIndicatorView.framework in Frameworks */,
 				236C0E7C21537CDC00021B0E /* SDWebImage.framework in Frameworks */,
-				232329D52153637800C1D17B /* RxCocoa.framework in Frameworks */,
-				236C0E7821537CDC00021B0E /* RxSwift.framework in Frameworks */,
+				2351804E215481A800477B25 /* NVActivityIndicatorViewAppExtension.framework in Frameworks */,
 				232329D62153637800C1D17B /* SwiftyJSON.framework in Frameworks */,
 				232329D72153637800C1D17B /* SDWebImage.framework in Frameworks */,
-				232329D82153637800C1D17B /* RxBlocking.framework in Frameworks */,
-				236C0E7421537CDC00021B0E /* RxBlocking.framework in Frameworks */,
 				232329C0215354F200C1D17B /* Alamofire.framework in Frameworks */,
 				232329CB2153632C00C1D17B /* XLPagerTabStrip.framework in Frameworks */,
 			);
@@ -195,6 +191,8 @@
 		232329BE215354F200C1D17B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				235180482154809500477B25 /* NVActivityIndicatorView.framework */,
+				235180462154806F00477B25 /* NVActivityIndicatorViewAppExtension.framework */,
 				236C0E8B21537D6C00021B0E /* XCTest.framework */,
 				232329CC2153637700C1D17B /* Realm.framework */,
 				232329D32153637800C1D17B /* RealmSwift.framework */,
@@ -294,7 +292,7 @@
 				2343BC8E21535168006BBC3A /* Info.plist */,
 				232329DC215363AC00C1D17B /* Properties.swift */,
 				232329E6215365E900C1D17B /* MobileCell.swift */,
-				236C0E6821536CA400021B0E /* N.swift */,
+				236C0E6821536CA400021B0E /* Extension.swift */,
 			);
 			path = "Clean Mobile Buyer Guide";
 			sourceTree = "<group>";
@@ -508,7 +506,7 @@
 				23DB86A02153B1E500F6D70A /* MobileDetailPresenter.swift in Sources */,
 				232329E7215365E900C1D17B /* MobileCell.swift in Sources */,
 				232329DF2153642A00C1D17B /* MobileListInteractor.swift in Sources */,
-				236C0E6921536CA400021B0E /* N.swift in Sources */,
+				236C0E6921536CA400021B0E /* Extension.swift in Sources */,
 				232329F12153678900C1D17B /* FavoriteListViewController.swift in Sources */,
 				23DB869021539BF200F6D70A /* FavoriteListWorker.swift in Sources */,
 				23DB8687215397D200F6D70A /* MainPresenter.swift in Sources */,

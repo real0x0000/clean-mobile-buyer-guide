@@ -6,6 +6,7 @@
 //  Copyright © 2561 ANUWAT SITTICHAK. All rights reserved.
 //
 
+import NVActivityIndicatorView
 import UIKit
 import XLPagerTabStrip
 
@@ -84,6 +85,7 @@ class MainViewController: ButtonBarPagerTabStripViewController, MainDisplayLogic
             newCell?.label.textColor = UIColor.black
         }
         interactor?.getMobileList()
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(ActivityData(), nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,6 +104,7 @@ class MainViewController: ButtonBarPagerTabStripViewController, MainDisplayLogic
     
     func successGetMobileList(list: [MobilePhone]) {
         updateList(list: list, sortType: self.dataStore?.sortType ?? .none)
+        NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
     }
     
     func errorGetMobileList(errorMsg: String?) {

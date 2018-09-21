@@ -1,6 +1,5 @@
 github "Alamofire/Alamofire" == 4.7.2
-github "realm/realm-cocoa"  == 3.7.4
-github "ReactiveX/RxSwift" ~> 4.0
 github "rs/SDWebImage" == 4.4.1
 github "SwiftyJSON/SwiftyJSON" == 4.1.0
 github "xmartlabs/XLPagerTabStrip" == 8.0.1 
+github "ninjaprox/NVActivityIndicatorView"
