@@ -83,18 +83,12 @@ class MobileListViewController: UITableViewController, MLDisplayLogic {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let mobile = mobileList[indexPath.row]
-        router?.dataStore?.mobilePhone = mobile
-        router?.routeToDetail()
+        router?.routeToDetail(itemIndex: indexPath.row)
     }
     
     @objc fileprivate func favorite(_ sender: UIButton) {
         let row = sender.tag
-        let mobile = mobileList[row]
-        if !(mobile.isFavorite) {
-            let id = mobile.id
-            NotificationCenter.default.post(name: Notification.Name.updateFavorite, object: nil, userInfo: ["id": id, "isFavorite": true])
-        }
+        interactor?.updateFavorite(itemIndex: row)
     }
     
 }

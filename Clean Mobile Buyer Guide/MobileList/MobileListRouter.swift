@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MobileRoutingLogic {
-    func routeToDetail()
+    func routeToDetail(itemIndex: Int)
 }
 
 protocol MobileDataPassing {
@@ -21,15 +21,15 @@ class MobileListRouter: NSObject, MobileRoutingLogic, MobileDataPassing {
     weak var viewController: MobileListViewController?
     var dataStore: MLDataStore?
     
-    func routeToDetail() {
+    func routeToDetail(itemIndex: Int) {
         guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MOBILE_DETAIL") as? MobileDetailViewController else { return }
         var detailDataStore = vc.router!.dataStore!
-        passData(source: dataStore!, destination: &detailDataStore)
+        passData(source: dataStore!, itemIndex: itemIndex, destination: &detailDataStore)
         viewController?.show(vc, sender: nil)
     }
     
-    func passData(source: MLDataStore, destination: inout MDDataStore) {
-        destination.mobileData = source.mobilePhone
+    func passData(source: MLDataStore, itemIndex: Int, destination: inout MDDataStore) {
+        destination.mobileData = source.mobileList[itemIndex]
     }
     
 }

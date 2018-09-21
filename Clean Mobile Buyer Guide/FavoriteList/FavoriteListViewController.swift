@@ -83,9 +83,7 @@ class FavoriteListViewController: UITableViewController, FLDisplayLogic {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let mobile = favoriteList[indexPath.row]
-        router?.dataStore?.favoritePhone = mobile
-        router?.routeToDetail()
+        router?.routeToDetail(itemIndex: indexPath.row)
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -103,7 +101,7 @@ class FavoriteListViewController: UITableViewController, FLDisplayLogic {
         let alertController = UIAlertController(title: "Are you sure you want to delete \(mobile.name) from favorite?", message: nil, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { action in
-           NotificationCenter.default.post(name: .updateFavorite, object: nil, userInfo: ["id": mobile.id, "isFavorite": false])
+            self.interactor?.updateFavorite(itemIndex: indexPath.row)
         })
         alertController.addAction(cancelAction)
         alertController.addAction(deleteAction)
