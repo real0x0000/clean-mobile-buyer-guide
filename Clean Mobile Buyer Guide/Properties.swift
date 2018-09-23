@@ -24,6 +24,5 @@ class Properties {
         static let MESSAGE_ERROR_RESPONSE = "พบข้อผิดพลาด ไม่สามารถเชื่อมต่อกับเซิฟเวอร์ได้"
     }
     
-    
 }
 
