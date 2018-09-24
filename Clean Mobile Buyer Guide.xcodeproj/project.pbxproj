@@ -21,7 +21,6 @@
 		232329E92153664C00C1D17B /* MobileListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329E82153664C00C1D17B /* MobileListRouter.swift */; };
 		232329ED215366EA00C1D17B /* MobileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232329EC215366E900C1D17B /* MobileCell.xib */; };
 		232329EF2153671800C1D17B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232329EE2153671800C1D17B /* MainViewController.swift */; };
-		232D4CDA2153CF3C00EE0F9A /* MobileDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D4CD92153CF3C00EE0F9A /* MobileDetailRouter.swift */; };
 		2343BC8321535168006BBC3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2343BC8221535168006BBC3A /* AppDelegate.swift */; };
 		2343BC8821535168006BBC3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2343BC8621535168006BBC3A /* Main.storyboard */; };
 		2343BC8A21535168006BBC3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2343BC8921535168006BBC3A /* Assets.xcassets */; };
@@ -55,6 +54,7 @@
 		23DB869E2153B1DC00F6D70A /* MobileDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB869D2153B1DC00F6D70A /* MobileDetailWorker.swift */; };
 		23DB86A02153B1E500F6D70A /* MobileDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB869F2153B1E500F6D70A /* MobileDetailPresenter.swift */; };
 		365D388A2158860100D2B15D /* MobileDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D38892158860100D2B15D /* MobileDetailModel.swift */; };
+		365D388C2158975200D2B15D /* MobileListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D388B2158975200D2B15D /* MobileListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,7 +114,6 @@
 		232329E82153664C00C1D17B /* MobileListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListRouter.swift; sourceTree = "<group>"; };
 		232329EC215366E900C1D17B /* MobileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MobileCell.xib; path = "Clean Mobile Buyer Guide/MobileList/MobileCell.xib"; sourceTree = SOURCE_ROOT; };
 		232329EE2153671800C1D17B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		232D4CD92153CF3C00EE0F9A /* MobileDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailRouter.swift; sourceTree = "<group>"; };
 		2343BC7F21535167006BBC3A /* Clean Mobile Buyer Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clean Mobile Buyer Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2343BC8221535168006BBC3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2343BC8721535168006BBC3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -144,6 +143,7 @@
 		23DB869D2153B1DC00F6D70A /* MobileDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailWorker.swift; sourceTree = "<group>"; };
 		23DB869F2153B1E500F6D70A /* MobileDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailPresenter.swift; sourceTree = "<group>"; };
 		365D38892158860100D2B15D /* MobileDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailModel.swift; sourceTree = "<group>"; };
+		365D388B2158975200D2B15D /* MobileListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +211,7 @@
 				232329E02153645300C1D17B /* MobileListPresenter.swift */,
 				232329E22153646300C1D17B /* MobileListWorker.swift */,
 				232329E82153664C00C1D17B /* MobileListRouter.swift */,
+				365D388B2158975200D2B15D /* MobileListModel.swift */,
 			);
 			path = MobileList;
 			sourceTree = "<group>";
@@ -224,7 +225,6 @@
 				23DB869B2153B1D300F6D70A /* MobileDetailInteractor.swift */,
 				23DB869D2153B1DC00F6D70A /* MobileDetailWorker.swift */,
 				23DB869F2153B1E500F6D70A /* MobileDetailPresenter.swift */,
-				232D4CD92153CF3C00EE0F9A /* MobileDetailRouter.swift */,
 				365D38892158860100D2B15D /* MobileDetailModel.swift */,
 			);
 			path = MobileDetail;
@@ -484,9 +484,9 @@
 				23DB869E2153B1DC00F6D70A /* MobileDetailWorker.swift in Sources */,
 				23DB86892153984C00F6D70A /* MainModel.swift in Sources */,
 				232329E92153664C00C1D17B /* MobileListRouter.swift in Sources */,
-				232D4CDA2153CF3C00EE0F9A /* MobileDetailRouter.swift in Sources */,
 				232329DD215363AC00C1D17B /* Properties.swift in Sources */,
 				23DB86A02153B1E500F6D70A /* MobileDetailPresenter.swift in Sources */,
+				365D388C2158975200D2B15D /* MobileListModel.swift in Sources */,
 				232329E7215365E900C1D17B /* MobileCell.swift in Sources */,
 				232329DF2153642A00C1D17B /* MobileListInteractor.swift in Sources */,
 				236C0E6921536CA400021B0E /* Extension.swift in Sources */,

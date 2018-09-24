@@ -8,19 +8,19 @@
 
 import UIKit
 
-protocol MLInteractorBusinessLogic {
+protocol MobileListInteractorInterface {
     func getList(list: [MobilePhone], sortType: SortType)
     func getFavoriteList(list: [MobilePhone], sortType: SortType)
     func updateFavorite(itemIndex: Int, isFavorite: Bool)
 }
 
-protocol MLDataStore {
+protocol MobileListDataStore {
     var mobileList: [MobilePhone] { get set }
 }
 
-class MobileListInteractor: MLInteractorBusinessLogic, MLDataStore {
+class MobileListInteractor: MobileListInteractorInterface, MobileListDataStore {
     
-    var presenter: MLPresentationLogic?
+    var presenter: MobileListPresentationInterface?
     var worker: MobileListWorker?
     var mobileList: [MobilePhone] = []
     
@@ -29,22 +29,24 @@ class MobileListInteractor: MLInteractorBusinessLogic, MLDataStore {
     }
     
     func getList(list: [MobilePhone], sortType: SortType) {
-        mobileList = list
         if let sortList = worker?.sortList(list: list, sortType: sortType) {
-            self.presenter?.presentList(list: sortList)
+            mobileList = sortList
+            presenter?.presentList(response: MobileListModel.GetMobileList.Response(list: sortList))
         }
         else {
-            self.presenter?.presentList(list: list)
+            mobileList = list
+            presenter?.presentList(response: MobileListModel.GetMobileList.Response(list: list))
         }
     }
     
     func getFavoriteList(list: [MobilePhone], sortType: SortType) {
-        mobileList = list
         if let favList = worker?.getFavoriteList(list: list, sortType: sortType) {
-            presenter?.presentList(list: favList)
+            mobileList = favList
+            presenter?.presentList(response: MobileListModel.GetMobileList.Response(list: favList))
         }
         else {
-            presenter?.presentList(list: list)
+            mobileList = list
+            presenter?.presentList(response: MobileListModel.GetMobileList.Response(list: list))
         }
     }
     

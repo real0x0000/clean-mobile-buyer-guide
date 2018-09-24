@@ -8,27 +8,21 @@
 
 import Foundation
 
-protocol MainPresentationLogic {
+protocol MainPresenterInterface {
     func presentGetListResults(response: MainModel.GetMobile.Response)
     func presentUpdateList()
 }
 
-class MainPresenter: MainPresentationLogic {
+class MainPresenter: MainPresenterInterface {
     
-    weak var viewController: MainDisplayLogic?
+    weak var viewController: MainViewControllerInterface?
     
     func presentGetListResults(response: MainModel.GetMobile.Response) {
-        if response.isError {
-            viewController?.errorGetMobileList(errorMsg: response.message)
-        }
-        else {
-            viewController?.successGetMobileList()
-//            viewController?.successGetMobileList(list: response.list)
-        }
+        viewController?.presentGetMobileList(viewModel: MainModel.GetMobile.ViewModel(isError: response.isError, message: response.message))
     }
     
     func presentUpdateList() {
-        viewController?.updateFavoriteList()
+        viewController?.updateList()
     }
     
 }

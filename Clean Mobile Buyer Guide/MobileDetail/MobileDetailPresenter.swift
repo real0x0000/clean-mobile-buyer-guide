@@ -8,14 +8,14 @@
 
 import Foundation
 
-protocol MDPresentationLogic {
+protocol MobileDetailPresenterInterface {
     func presentMobileData(data: MobilePhone)
     func presentGetImagesResult(response: MobileDetail.GetMobileImages.Response)
 }
 
-class MobileDetailPresenter: MDPresentationLogic {
+class MobileDetailPresenter: MobileDetailPresenterInterface {
     
-    weak var viewController: MDDisplayLogic?
+    weak var viewController: MobileDetailViewControllerInterface?
     
     func presentMobileData(data: MobilePhone) {
         viewController?.presentMobileData(data: data)

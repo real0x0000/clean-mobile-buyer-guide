@@ -13,24 +13,20 @@ protocol MobileRoutingLogic {
 }
 
 protocol MobileDataPassing {
-    var dataStore: MLDataStore? { get set }
+    var dataStore: MobileListDataStore? { get set }
 }
 
 class MobileListRouter: NSObject, MobileRoutingLogic, MobileDataPassing {
     
     weak var viewController: MobileListViewController?
-    var dataStore: MLDataStore?
+    var dataStore: MobileListDataStore?
     
     func routeToDetail(itemIndex: Int) {
         guard let vc = UIStoryboard(name: "MobileDetail", bundle: nil).instantiateViewController(withIdentifier: "MobileDetail") as? MobileDetailViewController else { return }
-        if var detailDataStore = vc.router?.dataStore, let ds = dataStore {
-            passData(source: ds, itemIndex: itemIndex, destination: &detailDataStore)
+        if let ds = dataStore {
+            vc.interactor?.mobileData = ds.mobileList[itemIndex]
         }
         viewController?.show(vc, sender: nil)
-    }
-    
-    func passData(source: MLDataStore, itemIndex: Int, destination: inout MDDataStore) {
-        destination.mobileData = source.mobileList[itemIndex]
     }
     
 }

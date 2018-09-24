@@ -23,7 +23,8 @@ struct MainModel {
         }
         
         struct ViewModel {
-            
+            var isError: Bool
+            var message: String?
         }
         
     }

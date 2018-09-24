@@ -9,14 +9,14 @@
 import UIKit
 import XLPagerTabStrip
 
-protocol MLDisplayLogic: class
+protocol MobileListViewControllerInterface: class
 {
-    func presentList(list: [MobilePhone])
+    func presentMobileList(viewModel: MobileListModel.GetMobileList.ViewModel)
 }
 
-class MobileListViewController: UITableViewController, MLDisplayLogic {
+class MobileListViewController: UITableViewController, MobileListViewControllerInterface {
     
-    var interactor: MLInteractorBusinessLogic?
+    var interactor: MobileListInteractorInterface?
     var router: (NSObjectProtocol & MobileRoutingLogic & MobileDataPassing)?
     fileprivate var itemInfo: IndicatorInfo = "View"
     fileprivate var isFavorite = false
@@ -61,8 +61,8 @@ class MobileListViewController: UITableViewController, MLDisplayLogic {
         super.viewWillAppear(animated)
     }
 
-    func presentList(list: [MobilePhone]) {
-        mobileList = list
+    func presentMobileList(viewModel: MobileListModel.GetMobileList.ViewModel) {
+        mobileList = viewModel.list
         tableView.reloadData()
     }
     

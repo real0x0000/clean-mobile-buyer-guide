@@ -8,21 +8,18 @@
 
 import Foundation
 
-protocol MainInteractorBusinessLogic {
+protocol MainInteractorInterface {
+    var mobileList: [MobilePhone] { get set }
+    var sortType: SortType { get set }
     func getMobileList(request: MainModel.GetMobile.Request)
     func favoriteMobile(id: Int, isFavorite: Bool)
 }
 
-protocol MainInteractorDataStore {
-    var mobileList: [MobilePhone] { get set }
-    var sortType: SortType { get set }
-}
-
-class MainInteractor: MainInteractorBusinessLogic, MainInteractorDataStore {
+class MainInteractor: MainInteractorInterface {
 
     var sortType: SortType = .none
     var mobileList: [MobilePhone] = []
-    var presenter: MainPresentationLogic?
+    var presenter: MainPresenterInterface?
     var worker: MainWorker?
 
     init(worker: MainWorker) {

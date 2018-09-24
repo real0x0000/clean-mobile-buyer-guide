@@ -8,18 +8,15 @@
 
 import Foundation
 
-protocol MDInteractorBusinessLogic {
+protocol MobileDetailInteractorInterface {
     func getMobileImages(request: MobileDetail.GetMobileImages.Request)
     func getMobileData()
+     var mobileData: MobilePhone? { get set }
 }
 
-protocol MDDataStore {
-    var mobileData: MobilePhone? { get set }
-}
-
-class MobileDetailInteractor: MDInteractorBusinessLogic, MDDataStore {
+class MobileDetailInteractor: MobileDetailInteractorInterface {
     
-    var presenter: MDPresentationLogic?
+    var presenter: MobileDetailPresenterInterface?
     var worker: MobileDetailWorker?
     var mobileData: MobilePhone?
     

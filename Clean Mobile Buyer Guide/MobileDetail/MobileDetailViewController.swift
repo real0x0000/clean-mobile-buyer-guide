@@ -8,16 +8,15 @@
 
 import UIKit
 
-protocol MDDisplayLogic: class
+protocol MobileDetailViewControllerInterface: class
 {
     func presentMobileData(data: MobilePhone)
     func presentGetMobileImages(viewModel: MobileDetail.GetMobileImages.ViewModel)
 }
 
-final class MobileDetailViewController: UIViewController, MDDisplayLogic {
+final class MobileDetailViewController: UIViewController, MobileDetailViewControllerInterface {
  
-    var router: (NSObjectProtocol & MobileDetailPassing)?
-    var interactor: MDInteractorBusinessLogic?
+    var interactor: MobileDetailInteractorInterface?
     fileprivate var mobileImagesUrl: [String] = []
     
     @IBOutlet weak var priceLabel: UILabel!
@@ -38,13 +37,9 @@ final class MobileDetailViewController: UIViewController, MDDisplayLogic {
     private func setup() {
         let interactor = MobileDetailInteractor()
         let presenter = MobileDetailPresenter()
-        let router = MobileDetailRouter()
         self.interactor = interactor
-        self.router = router
         interactor.presenter = presenter
         presenter.viewController = self
-        router.viewController = self
-        router.dataStore = interactor
     }
     
     override func viewDidLoad() {

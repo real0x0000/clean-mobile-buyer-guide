@@ -8,16 +8,16 @@
 
 import Foundation
 
-protocol MLPresentationLogic {
-    func presentList(list: [MobilePhone])
+protocol MobileListPresentationInterface {
+    func presentList(response: MobileListModel.GetMobileList.Response)
 }
 
-class MobileListPresenter: MLPresentationLogic {
+class MobileListPresenter: MobileListPresentationInterface {
     
-    weak var viewController: MLDisplayLogic?
+    weak var viewController: MobileListViewControllerInterface?
     
-    func presentList(list: [MobilePhone]) {
-        viewController?.presentList(list: list)
+    func presentList(response: MobileListModel.GetMobileList.Response) {
+        viewController?.presentMobileList(viewModel: MobileListModel.GetMobileList.ViewModel(list: response.list))
     }
     
 }
