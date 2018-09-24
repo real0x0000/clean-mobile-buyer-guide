@@ -53,6 +53,10 @@
 		23DB869C2153B1D300F6D70A /* MobileDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB869B2153B1D300F6D70A /* MobileDetailInteractor.swift */; };
 		23DB869E2153B1DC00F6D70A /* MobileDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB869D2153B1DC00F6D70A /* MobileDetailWorker.swift */; };
 		23DB86A02153B1E500F6D70A /* MobileDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB869F2153B1E500F6D70A /* MobileDetailPresenter.swift */; };
+		360B571821589E6800D761EF /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B571421589E6800D761EF /* MainViewControllerTests.swift */; };
+		360B571921589E6800D761EF /* MainInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B571521589E6800D761EF /* MainInteractorTests.swift */; };
+		360B571A21589E6800D761EF /* MainWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B571621589E6800D761EF /* MainWorkerTests.swift */; };
+		360B571B21589E6800D761EF /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B571721589E6800D761EF /* MainPresenterTests.swift */; };
 		365D388A2158860100D2B15D /* MobileDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D38892158860100D2B15D /* MobileDetailModel.swift */; };
 		365D388C2158975200D2B15D /* MobileListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D388B2158975200D2B15D /* MobileListModel.swift */; };
 /* End PBXBuildFile section */
@@ -142,6 +146,10 @@
 		23DB869B2153B1D300F6D70A /* MobileDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailInteractor.swift; sourceTree = "<group>"; };
 		23DB869D2153B1DC00F6D70A /* MobileDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailWorker.swift; sourceTree = "<group>"; };
 		23DB869F2153B1E500F6D70A /* MobileDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailPresenter.swift; sourceTree = "<group>"; };
+		360B571421589E6800D761EF /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
+		360B571521589E6800D761EF /* MainInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorTests.swift; sourceTree = "<group>"; };
+		360B571621589E6800D761EF /* MainWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorkerTests.swift; sourceTree = "<group>"; };
+		360B571721589E6800D761EF /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
 		365D38892158860100D2B15D /* MobileDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailModel.swift; sourceTree = "<group>"; };
 		365D388B2158975200D2B15D /* MobileListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -284,6 +292,10 @@
 			children = (
 				2343BC9721535168006BBC3A /* Clean_Mobile_Buyer_GuideTests.swift */,
 				2343BC9921535168006BBC3A /* Info.plist */,
+				360B571421589E6800D761EF /* MainViewControllerTests.swift */,
+				360B571521589E6800D761EF /* MainInteractorTests.swift */,
+				360B571621589E6800D761EF /* MainWorkerTests.swift */,
+				360B571721589E6800D761EF /* MainPresenterTests.swift */,
 			);
 			path = "Clean Mobile Buyer GuideTests";
 			sourceTree = "<group>";
@@ -505,6 +517,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2343BC9821535168006BBC3A /* Clean_Mobile_Buyer_GuideTests.swift in Sources */,
+				360B571921589E6800D761EF /* MainInteractorTests.swift in Sources */,
+				360B571B21589E6800D761EF /* MainPresenterTests.swift in Sources */,
+				360B571A21589E6800D761EF /* MainWorkerTests.swift in Sources */,
+				360B571821589E6800D761EF /* MainViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

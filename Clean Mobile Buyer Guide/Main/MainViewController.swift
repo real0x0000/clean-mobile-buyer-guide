@@ -20,7 +20,7 @@ class MainViewController: ButtonBarPagerTabStripViewController, MainViewControll
     
     fileprivate let mobileVC = MobileListViewController(itemInfo: "All", isFavorite: false)
     fileprivate let favoriteVC = MobileListViewController(itemInfo: "Favorite", isFavorite: true)
-    fileprivate var interactor: MainInteractorInterface?
+    var interactor: MainInteractorInterface?
     
     @IBAction func sortList(_ sender: UIButton) {
         let alertController = UIAlertController(title: "Sort", message: nil, preferredStyle: .alert)
@@ -92,7 +92,7 @@ class MainViewController: ButtonBarPagerTabStripViewController, MainViewControll
         return [mobileVC, favoriteVC]
     }
     
-    @objc fileprivate func updateList(_ notification: Notification) {
+    @objc func updateList(_ notification: Notification) {
         if let id = notification.userInfo?["id"] as? Int, let isFavorite = notification.userInfo?["isFavorite"] as? Bool {
             interactor?.favoriteMobile(id: id, isFavorite: isFavorite)
         }
