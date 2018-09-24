@@ -11,8 +11,7 @@ import UIKit
 protocol MDDisplayLogic: class
 {
     func presentMobileData(data: MobilePhone)
-    func successGetMobileImages(imageUrls: [String])
-    func errorGetMobileImages(errorMsg: String?)
+    func presentGetMobileImages(viewModel: MobileDetail.GetMobileImages.ViewModel)
 }
 
 final class MobileDetailViewController: UIViewController, MDDisplayLogic {
@@ -52,7 +51,7 @@ final class MobileDetailViewController: UIViewController, MDDisplayLogic {
         super.viewDidLoad()
         initCollectionView()
         interactor?.getMobileData()
-        interactor?.getMobileImages()
+        interactor?.getMobileImages(request: MobileDetail.GetMobileImages.Request())
     }
 
     func presentMobileData(data: MobilePhone) {
@@ -93,16 +92,17 @@ extension MobileDetailViewController: UICollectionViewDataSource, UICollectionVi
         return CGSize(width: cellWidth, height: cellHeight)
     }
     
-    func successGetMobileImages(imageUrls: [String]) {
-        mobileImagesUrl = imageUrls
-        imageCollectionView.reloadData()
-    }
-    
-    func errorGetMobileImages(errorMsg: String?) {
-        let alertController = UIAlertController(title: nil, message: errorMsg, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        present(alertController, animated: true, completion: nil)
+    func presentGetMobileImages(viewModel: MobileDetail.GetMobileImages.ViewModel) {
+        switch viewModel.isError {
+        case true:
+            let alertController = UIAlertController(title: nil, message: viewModel.errorMsg, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+        case false:
+            mobileImagesUrl = viewModel.imageUrls
+            imageCollectionView.reloadData()
+        }
     }
     
 }

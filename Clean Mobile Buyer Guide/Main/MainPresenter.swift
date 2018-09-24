@@ -9,25 +9,26 @@
 import Foundation
 
 protocol MainPresentationLogic {
-    func presentGetListResults(response: MainModel.Response)
-    func presentUpdateList(list: [MobilePhone])
+    func presentGetListResults(response: MainModel.GetMobile.Response)
+    func presentUpdateList()
 }
 
 class MainPresenter: MainPresentationLogic {
     
     weak var viewController: MainDisplayLogic?
     
-    func presentGetListResults(response: MainModel.Response) {
+    func presentGetListResults(response: MainModel.GetMobile.Response) {
         if response.isError {
             viewController?.errorGetMobileList(errorMsg: response.message)
         }
         else {
-            viewController?.successGetMobileList(list: response.list)
+            viewController?.successGetMobileList()
+//            viewController?.successGetMobileList(list: response.list)
         }
     }
     
-    func presentUpdateList(list: [MobilePhone]) {
-        viewController?.updateFavoriteList(list: list)
+    func presentUpdateList() {
+        viewController?.updateFavoriteList()
     }
     
 }

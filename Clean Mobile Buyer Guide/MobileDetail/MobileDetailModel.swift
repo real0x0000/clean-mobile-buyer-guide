@@ -1,29 +1,31 @@
 //
-//  MainModel.swift
+//  MobileDetailModel.swift
 //  Clean Mobile Buyer Guide
 //
-//  Created by ANUWAT SITTICHAK on 20/9/2561 BE.
+//  Created by ANUWAT SITTICCHAK on 24/9/2561 BE.
 //  Copyright © 2561 ANUWAT SITTICHAK. All rights reserved.
 //
 
 import Foundation
 
-struct MainModel {
+struct MobileDetail {
     
-    struct GetMobile {
+    struct GetMobileImages {
         
         struct Request {
             
         }
         
         struct Response {
-            var list: [MobilePhone]
+            var imageUrls: [String]
             var isError: Bool
-            var message: String?
+            var errorMsg: String?
         }
         
         struct ViewModel {
-            
+            var imageUrls: [String]
+            var isError: Bool
+            var errorMsg: String?
         }
         
     }

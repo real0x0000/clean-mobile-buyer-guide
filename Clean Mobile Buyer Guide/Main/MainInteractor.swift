@@ -9,39 +9,40 @@
 import Foundation
 
 protocol MainInteractorBusinessLogic {
-    func getMobileList()
-    func favoriteMobile(list: [MobilePhone], id: Int, isFavorite: Bool)
+    func getMobileList(request: MainModel.GetMobile.Request)
+    func favoriteMobile(id: Int, isFavorite: Bool)
 }
 
 protocol MainInteractorDataStore {
+    var mobileList: [MobilePhone] { get set }
     var sortType: SortType { get set }
 }
 
 class MainInteractor: MainInteractorBusinessLogic, MainInteractorDataStore {
 
     var sortType: SortType = .none
+    var mobileList: [MobilePhone] = []
     var presenter: MainPresentationLogic?
     var worker: MainWorker?
-    
+
     init(worker: MainWorker) {
         self.worker = worker
     }
     
-    func getMobileList() {
-        worker?.getMobileList(success: { (list) in
-            self.presenter?.presentGetListResults(response: MainModel.Response(list: list, isError: false, message: nil))
+    func getMobileList(request: MainModel.GetMobile.Request) {
+        worker?.getMobileList(success: { [weak self] (list) in
+            self?.mobileList = list
+            self?.presenter?.presentGetListResults(response: MainModel.GetMobile.Response(list: list, isError: false, message: nil))
         }, failure: { (errorMsg) in
-            self.presenter?.presentGetListResults(response: MainModel.Response(list: [], isError: true, message: errorMsg))
+            self.presenter?.presentGetListResults(response: MainModel.GetMobile.Response(list: [], isError: true, message: errorMsg))
         })
     }
     
-    func favoriteMobile(list: [MobilePhone], id: Int, isFavorite: Bool) {
-        if let updateList = worker?.favoriteMobile(list: list, id: id, isFavorite: isFavorite) {
-            self.presenter?.presentUpdateList(list: updateList)
+    func favoriteMobile(id: Int, isFavorite: Bool) {
+        if let updateList = worker?.favoriteMobile(list: mobileList, id: id, isFavorite: isFavorite) {
+            mobileList = updateList
         }
-        else {
-            self.presenter?.presentUpdateList(list: list)
-        }
+        presenter?.presentUpdateList()
     }
     
 }

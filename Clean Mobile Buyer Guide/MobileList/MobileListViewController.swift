@@ -102,8 +102,8 @@ class MobileListViewController: UITableViewController, MLDisplayLogic {
         let mobile = mobileList[indexPath.row]
         let alertController = UIAlertController(title: "Are you sure you want to delete \(mobile.name) from favorite?", message: nil, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { action in
-            self.interactor?.updateFavorite(itemIndex: indexPath.row, isFavorite: false)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] action in
+            self?.interactor?.updateFavorite(itemIndex: indexPath.row, isFavorite: false)
         })
         alertController.addAction(cancelAction)
         alertController.addAction(deleteAction)

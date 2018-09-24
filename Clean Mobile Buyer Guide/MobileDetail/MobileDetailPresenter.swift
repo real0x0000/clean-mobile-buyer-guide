@@ -10,7 +10,7 @@ import Foundation
 
 protocol MDPresentationLogic {
     func presentMobileData(data: MobilePhone)
-    func presentGetImagesResult(urls: [String], isError: Bool, errorMsg: String?)
+    func presentGetImagesResult(response: MobileDetail.GetMobileImages.Response)
 }
 
 class MobileDetailPresenter: MDPresentationLogic {
@@ -21,13 +21,9 @@ class MobileDetailPresenter: MDPresentationLogic {
         viewController?.presentMobileData(data: data)
     }
     
-    func presentGetImagesResult(urls: [String], isError: Bool, errorMsg: String?) {
-        if isError {
-            viewController?.errorGetMobileImages(errorMsg: errorMsg)
-        }
-        else {
-            viewController?.successGetMobileImages(imageUrls: urls)
-        }
+    func presentGetImagesResult(response: MobileDetail.GetMobileImages.Response) {
+        let viewModel = MobileDetail.GetMobileImages.ViewModel(imageUrls: response.imageUrls, isError: response.isError, errorMsg: response.errorMsg)
+        viewController?.presentGetMobileImages(viewModel: viewModel)
     }
     
 }

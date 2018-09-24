@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MDInteractorBusinessLogic {
-    func getMobileImages()
+    func getMobileImages(request: MobileDetail.GetMobileImages.Request)
     func getMobileData()
 }
 
@@ -25,17 +25,17 @@ class MobileDetailInteractor: MDInteractorBusinessLogic, MDDataStore {
     
     func getMobileData() {
         if let data = mobileData {
-            self.presenter?.presentMobileData(data: data)
+            presenter?.presentMobileData(data: data)
         }
     }
     
-    func getMobileImages() {
+    func getMobileImages(request: MobileDetail.GetMobileImages.Request) {
         worker = MobileDetailWorker()
         if let id = mobileData?.id {
-            worker?.getMobileImages(id, success: { (urls) in
-                self.presenter?.presentGetImagesResult(urls: urls, isError: false, errorMsg: nil)
-            }, failure: { (errorMsg) in
-                self.presenter?.presentGetImagesResult(urls: [], isError: true, errorMsg: errorMsg)
+            worker?.getMobileImages(id, success: { [weak self] (urls) in
+                self?.presenter?.presentGetImagesResult(response: MobileDetail.GetMobileImages.Response(imageUrls: urls, isError: false, errorMsg: nil))
+            }, failure: { [weak self] (errorMsg) in
+                self?.presenter?.presentGetImagesResult(response: MobileDetail.GetMobileImages.Response(imageUrls: [], isError: true, errorMsg: errorMsg))
             })
         }
     }

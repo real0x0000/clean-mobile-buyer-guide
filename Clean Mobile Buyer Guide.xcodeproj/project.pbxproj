@@ -54,6 +54,7 @@
 		23DB869C2153B1D300F6D70A /* MobileDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB869B2153B1D300F6D70A /* MobileDetailInteractor.swift */; };
 		23DB869E2153B1DC00F6D70A /* MobileDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB869D2153B1DC00F6D70A /* MobileDetailWorker.swift */; };
 		23DB86A02153B1E500F6D70A /* MobileDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB869F2153B1E500F6D70A /* MobileDetailPresenter.swift */; };
+		365D388A2158860100D2B15D /* MobileDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D38892158860100D2B15D /* MobileDetailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,7 @@
 		23DB869B2153B1D300F6D70A /* MobileDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailInteractor.swift; sourceTree = "<group>"; };
 		23DB869D2153B1DC00F6D70A /* MobileDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailWorker.swift; sourceTree = "<group>"; };
 		23DB869F2153B1E500F6D70A /* MobileDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailPresenter.swift; sourceTree = "<group>"; };
+		365D38892158860100D2B15D /* MobileDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 				23DB869D2153B1DC00F6D70A /* MobileDetailWorker.swift */,
 				23DB869F2153B1E500F6D70A /* MobileDetailPresenter.swift */,
 				232D4CD92153CF3C00EE0F9A /* MobileDetailRouter.swift */,
+				365D38892158860100D2B15D /* MobileDetailModel.swift */,
 			);
 			path = MobileDetail;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				2343BC8321535168006BBC3A /* AppDelegate.swift in Sources */,
 				232329E32153646300C1D17B /* MobileListWorker.swift in Sources */,
 				23DB869C2153B1D300F6D70A /* MobileDetailInteractor.swift in Sources */,
+				365D388A2158860100D2B15D /* MobileDetailModel.swift in Sources */,
 				23DB8683215396FB00F6D70A /* MainInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
