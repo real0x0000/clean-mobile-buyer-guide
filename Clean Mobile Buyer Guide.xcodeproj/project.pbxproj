@@ -25,7 +25,6 @@
 		2343BC8821535168006BBC3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2343BC8621535168006BBC3A /* Main.storyboard */; };
 		2343BC8A21535168006BBC3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2343BC8921535168006BBC3A /* Assets.xcassets */; };
 		2343BC8D21535168006BBC3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2343BC8B21535168006BBC3A /* LaunchScreen.storyboard */; };
-		2343BC9821535168006BBC3A /* Clean_Mobile_Buyer_GuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2343BC9721535168006BBC3A /* Clean_Mobile_Buyer_GuideTests.swift */; };
 		2343BCA321535168006BBC3A /* Clean_Mobile_Buyer_GuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2343BCA221535168006BBC3A /* Clean_Mobile_Buyer_GuideUITests.swift */; };
 		2347276B2154E8CB008FF9BF /* MobileDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2347276A2154E8CB008FF9BF /* MobileDetail.storyboard */; };
 		235180472154806F00477B25 /* NVActivityIndicatorViewAppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235180462154806F00477B25 /* NVActivityIndicatorViewAppExtension.framework */; };
@@ -55,8 +54,13 @@
 		23DB86A02153B1E500F6D70A /* MobileDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DB869F2153B1E500F6D70A /* MobileDetailPresenter.swift */; };
 		360B571821589E6800D761EF /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B571421589E6800D761EF /* MainViewControllerTests.swift */; };
 		360B571921589E6800D761EF /* MainInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B571521589E6800D761EF /* MainInteractorTests.swift */; };
-		360B571A21589E6800D761EF /* MainWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B571621589E6800D761EF /* MainWorkerTests.swift */; };
 		360B571B21589E6800D761EF /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B571721589E6800D761EF /* MainPresenterTests.swift */; };
+		360B57222158BE9A00D761EF /* MobileListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B571E2158BE9A00D761EF /* MobileListViewControllerTests.swift */; };
+		360B57232158BE9A00D761EF /* MobileListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B571F2158BE9A00D761EF /* MobileListInteractorTests.swift */; };
+		360B57252158BE9A00D761EF /* MobileListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B57212158BE9A00D761EF /* MobileListPresenterTests.swift */; };
+		360B572B2158D3CA00D761EF /* MobileDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B57272158D3CA00D761EF /* MobileDetailViewControllerTests.swift */; };
+		360B572C2158D3CA00D761EF /* MobileDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B57282158D3CA00D761EF /* MobileDetailInteractorTests.swift */; };
+		360B572E2158D3CA00D761EF /* MobileDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B572A2158D3CA00D761EF /* MobileDetailPresenterTests.swift */; };
 		365D388A2158860100D2B15D /* MobileDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D38892158860100D2B15D /* MobileDetailModel.swift */; };
 		365D388C2158975200D2B15D /* MobileListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D388B2158975200D2B15D /* MobileListModel.swift */; };
 /* End PBXBuildFile section */
@@ -125,7 +129,6 @@
 		2343BC8C21535168006BBC3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2343BC8E21535168006BBC3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2343BC9321535168006BBC3A /* Clean Mobile Buyer GuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Clean Mobile Buyer GuideTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2343BC9721535168006BBC3A /* Clean_Mobile_Buyer_GuideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clean_Mobile_Buyer_GuideTests.swift; sourceTree = "<group>"; };
 		2343BC9921535168006BBC3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2343BC9E21535168006BBC3A /* Clean Mobile Buyer GuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Clean Mobile Buyer GuideUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2343BCA221535168006BBC3A /* Clean_Mobile_Buyer_GuideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clean_Mobile_Buyer_GuideUITests.swift; sourceTree = "<group>"; };
@@ -148,8 +151,13 @@
 		23DB869F2153B1E500F6D70A /* MobileDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailPresenter.swift; sourceTree = "<group>"; };
 		360B571421589E6800D761EF /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		360B571521589E6800D761EF /* MainInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorTests.swift; sourceTree = "<group>"; };
-		360B571621589E6800D761EF /* MainWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorkerTests.swift; sourceTree = "<group>"; };
 		360B571721589E6800D761EF /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
+		360B571E2158BE9A00D761EF /* MobileListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListViewControllerTests.swift; sourceTree = "<group>"; };
+		360B571F2158BE9A00D761EF /* MobileListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListInteractorTests.swift; sourceTree = "<group>"; };
+		360B57212158BE9A00D761EF /* MobileListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListPresenterTests.swift; sourceTree = "<group>"; };
+		360B57272158D3CA00D761EF /* MobileDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		360B57282158D3CA00D761EF /* MobileDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailInteractorTests.swift; sourceTree = "<group>"; };
+		360B572A2158D3CA00D761EF /* MobileDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailPresenterTests.swift; sourceTree = "<group>"; };
 		365D38892158860100D2B15D /* MobileDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailModel.swift; sourceTree = "<group>"; };
 		365D388B2158975200D2B15D /* MobileListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -290,12 +298,10 @@
 		2343BC9621535168006BBC3A /* Clean Mobile Buyer GuideTests */ = {
 			isa = PBXGroup;
 			children = (
-				2343BC9721535168006BBC3A /* Clean_Mobile_Buyer_GuideTests.swift */,
+				360B57262158D3BD00D761EF /* MobileDetail */,
+				360B571D2158BE8800D761EF /* MobileList */,
+				360B571C2158BE7200D761EF /* Main */,
 				2343BC9921535168006BBC3A /* Info.plist */,
-				360B571421589E6800D761EF /* MainViewControllerTests.swift */,
-				360B571521589E6800D761EF /* MainInteractorTests.swift */,
-				360B571621589E6800D761EF /* MainWorkerTests.swift */,
-				360B571721589E6800D761EF /* MainPresenterTests.swift */,
 			);
 			path = "Clean Mobile Buyer GuideTests";
 			sourceTree = "<group>";
@@ -328,6 +334,36 @@
 				2380E4AE2153956A003382A8 /* MobilePhone.swift */,
 			);
 			path = "Data Object";
+			sourceTree = "<group>";
+		};
+		360B571C2158BE7200D761EF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				360B571421589E6800D761EF /* MainViewControllerTests.swift */,
+				360B571521589E6800D761EF /* MainInteractorTests.swift */,
+				360B571721589E6800D761EF /* MainPresenterTests.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		360B571D2158BE8800D761EF /* MobileList */ = {
+			isa = PBXGroup;
+			children = (
+				360B571E2158BE9A00D761EF /* MobileListViewControllerTests.swift */,
+				360B571F2158BE9A00D761EF /* MobileListInteractorTests.swift */,
+				360B57212158BE9A00D761EF /* MobileListPresenterTests.swift */,
+			);
+			path = MobileList;
+			sourceTree = "<group>";
+		};
+		360B57262158D3BD00D761EF /* MobileDetail */ = {
+			isa = PBXGroup;
+			children = (
+				360B57272158D3CA00D761EF /* MobileDetailViewControllerTests.swift */,
+				360B57282158D3CA00D761EF /* MobileDetailInteractorTests.swift */,
+				360B572A2158D3CA00D761EF /* MobileDetailPresenterTests.swift */,
+			);
+			path = MobileDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,11 +552,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2343BC9821535168006BBC3A /* Clean_Mobile_Buyer_GuideTests.swift in Sources */,
+				360B57222158BE9A00D761EF /* MobileListViewControllerTests.swift in Sources */,
 				360B571921589E6800D761EF /* MainInteractorTests.swift in Sources */,
+				360B572B2158D3CA00D761EF /* MobileDetailViewControllerTests.swift in Sources */,
 				360B571B21589E6800D761EF /* MainPresenterTests.swift in Sources */,
-				360B571A21589E6800D761EF /* MainWorkerTests.swift in Sources */,
+				360B57252158BE9A00D761EF /* MobileListPresenterTests.swift in Sources */,
+				360B57232158BE9A00D761EF /* MobileListInteractorTests.swift in Sources */,
 				360B571821589E6800D761EF /* MainViewControllerTests.swift in Sources */,
+				360B572E2158D3CA00D761EF /* MobileDetailPresenterTests.swift in Sources */,
+				360B572C2158D3CA00D761EF /* MobileDetailInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

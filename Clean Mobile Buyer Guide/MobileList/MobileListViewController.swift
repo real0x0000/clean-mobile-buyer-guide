@@ -29,6 +29,12 @@ class MobileListViewController: UITableViewController, MobileListViewControllerI
         setup()
     }
     
+    init(isFavorite: Bool) {
+        self.isFavorite = isFavorite
+        super.init(nibName: nil, bundle: nil)
+        setup()
+    }
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
@@ -103,16 +109,20 @@ class MobileListViewController: UITableViewController, MobileListViewControllerI
         let alertController = UIAlertController(title: "Are you sure you want to delete \(mobile.name) from favorite?", message: nil, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] action in
-            self?.interactor?.updateFavorite(itemIndex: indexPath.row, isFavorite: false)
+            self?.favoriteMobile(index: indexPath.row, isFavorite: false)
         })
         alertController.addAction(cancelAction)
         alertController.addAction(deleteAction)
         present(alertController, animated: true, completion: nil)
     }
     
-    @objc fileprivate func favorite(_ sender: UIButton) {
+    @objc func favorite(_ sender: UIButton) {
         let row = sender.tag
-        interactor?.updateFavorite(itemIndex: row, isFavorite: true)
+        favoriteMobile(index: row, isFavorite: true)
+    }
+    
+    func favoriteMobile(index: Int, isFavorite: Bool) {
+        interactor?.updateFavorite(itemIndex: index, isFavorite: isFavorite)
     }
     
 }

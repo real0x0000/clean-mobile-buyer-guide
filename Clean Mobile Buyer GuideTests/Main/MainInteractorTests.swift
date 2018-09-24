@@ -23,6 +23,7 @@ class MainInteractorTests: XCTestCase {
   }
 
   override func tearDown() {
+    interactor = nil
     super.tearDown()
   }
 
@@ -85,7 +86,7 @@ class MainInteractorTests: XCTestCase {
     
         //Then
         XCTAssert(workerSpy.getMobileListCalled, "getMobileList() should ask worker to getMobileList() with success")
-        XCTAssert(presenterSpy.presentGetListCalled, "interactor should ask presenter to presentGetListResults()")
+        XCTAssert(presenterSpy.presentGetListCalled, "getMobileList() should ask presenter to presentGetListResults() when success")
     }
     
     func testGetMobileListShouldAskWorkerWithFailureAndPresenterToPresentGetListResults() {
@@ -102,7 +103,7 @@ class MainInteractorTests: XCTestCase {
         
         //Then
         XCTAssert(workerSpy.getMobileListCalled, "getMobileList() should ask worker to getMobileList() with failure")
-        XCTAssert(presenterSpy.presentGetListCalled, "interactor should ask presenter to presentGetListResults()")
+        XCTAssert(presenterSpy.presentGetListCalled, "getMobileList() should ask presenter to presentGetListResults() when failure")
     }
     
     func testFavoriteMobileShouldAskWorkerToFavoriteMobileAndPresenterToPresentUpdateList() {
@@ -117,8 +118,7 @@ class MainInteractorTests: XCTestCase {
         
         //Then
         XCTAssert(workerSpy.favoriteMobileCalled, "favoriteMobile() should ask worker to favoriteMobile()")
-        XCTAssert(presenterSpy.presentUpdateListCalled, "interactor should ask presenter to presentUpdateList()")
-        
+        XCTAssert(presenterSpy.presentUpdateListCalled, "favoriteMobile() should ask presenter to presentUpdateList()")
     }
     
 }

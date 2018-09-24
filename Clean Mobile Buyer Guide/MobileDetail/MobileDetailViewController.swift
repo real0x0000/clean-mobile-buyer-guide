@@ -34,8 +34,8 @@ final class MobileDetailViewController: UIViewController, MobileDetailViewContro
         setup()
     }
     
-    private func setup() {
-        let interactor = MobileDetailInteractor()
+    private func setup() {  
+        let interactor = MobileDetailInteractor(worker: MobileDetailWorker())
         let presenter = MobileDetailPresenter()
         self.interactor = interactor
         interactor.presenter = presenter

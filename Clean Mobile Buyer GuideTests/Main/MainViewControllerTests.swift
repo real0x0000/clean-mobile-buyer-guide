@@ -25,6 +25,7 @@ class MainViewControllerTests: XCTestCase {
   }
 
   override func tearDown() {
+    viewController = nil
     window = nil
     super.tearDown()
   }
@@ -35,6 +36,8 @@ class MainViewControllerTests: XCTestCase {
     let bundle = Bundle.main
     let storyboard = UIStoryboard(name: "Main", bundle: bundle)
     viewController = storyboard.instantiateViewController(withIdentifier: "MainVC") as! MainViewController
+//    viewController.mobileVC = MobileListViewController()
+//    viewController.favoriteVC = MobileListViewController()
   }
 
   func loadView() {

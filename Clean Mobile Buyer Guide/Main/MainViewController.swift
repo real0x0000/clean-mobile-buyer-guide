@@ -18,8 +18,8 @@ protocol MainViewControllerInterface: class
 
 class MainViewController: ButtonBarPagerTabStripViewController, MainViewControllerInterface {
     
-    fileprivate let mobileVC = MobileListViewController(itemInfo: "All", isFavorite: false)
-    fileprivate let favoriteVC = MobileListViewController(itemInfo: "Favorite", isFavorite: true)
+    var mobileVC: MobileListViewController?
+    var favoriteVC: MobileListViewController?
     var interactor: MainInteractorInterface?
     
     @IBAction func sortList(_ sender: UIButton) {
@@ -60,6 +60,8 @@ class MainViewController: ButtonBarPagerTabStripViewController, MainViewControll
         self.interactor = interactor
         interactor.presenter = presenter
         presenter.viewController = self
+        mobileVC = MobileListViewController(itemInfo: "All", isFavorite: false)
+        favoriteVC = MobileListViewController(itemInfo: "Favorite", isFavorite: true)
     }
     
     override func viewDidLoad() {
@@ -89,7 +91,15 @@ class MainViewController: ButtonBarPagerTabStripViewController, MainViewControll
     }
  
     override public func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        return [mobileVC, favoriteVC]
+        var views: [UIViewController] = []
+        if let mvc = mobileVC {
+            views.append(mvc)
+        }
+        if let fvc = favoriteVC {
+            views.append(fvc)
+        }
+        return views
+//        return [mobileVC, favoriteVC]
     }
     
     @objc func updateList(_ notification: Notification) {
@@ -112,8 +122,8 @@ class MainViewController: ButtonBarPagerTabStripViewController, MainViewControll
     }
     
     func updateList() {
-        mobileVC.interactor?.getList(list: interactor?.mobileList ?? [], sortType: interactor?.sortType ?? .none)
-        favoriteVC.interactor?.getFavoriteList(list: interactor?.mobileList ?? [], sortType: interactor?.sortType ?? .none)
+        mobileVC?.interactor?.getList(list: interactor?.mobileList ?? [], sortType: interactor?.sortType ?? .none)
+        favoriteVC?.interactor?.getFavoriteList(list: interactor?.mobileList ?? [], sortType: interactor?.sortType ?? .none)
     }
     
 }

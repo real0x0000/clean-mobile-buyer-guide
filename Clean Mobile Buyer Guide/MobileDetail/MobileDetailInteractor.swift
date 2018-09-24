@@ -20,6 +20,10 @@ class MobileDetailInteractor: MobileDetailInteractorInterface {
     var worker: MobileDetailWorker?
     var mobileData: MobilePhone?
     
+    init(worker: MobileDetailWorker) {
+        self.worker = worker
+    }
+    
     func getMobileData() {
         if let data = mobileData {
             presenter?.presentMobileData(data: data)
@@ -27,7 +31,6 @@ class MobileDetailInteractor: MobileDetailInteractorInterface {
     }
     
     func getMobileImages(request: MobileDetail.GetMobileImages.Request) {
-        worker = MobileDetailWorker()
         if let id = mobileData?.id {
             worker?.getMobileImages(id, success: { [weak self] (urls) in
                 self?.presenter?.presentGetImagesResult(response: MobileDetail.GetMobileImages.Response(imageUrls: urls, isError: false, errorMsg: nil))
