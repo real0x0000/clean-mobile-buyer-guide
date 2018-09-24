@@ -59,12 +59,11 @@ class MobileListInteractorTests: XCTestCase {
     
   // MARK: - Test doubles
 
-  // MARK: - Tests
+  // MARK: - Tests                  
 
     func testGetListShouldAskPresenterToPresentList() {
         // Given
         let presenter = MobileListPresenterSpy()
-//        let workerSpy = MobileListWorker
         interactor.presenter = presenter
 
         // When
@@ -146,7 +145,6 @@ class MobileListInteractorTests: XCTestCase {
         interactor.getFavoriteList(list: [], sortType: .none)
         
         // Then
-//        XCTAssert(worker.sortListCalled, "getFavoriteList() should ask worker to sortList() when sortType is none")
         XCTAssert(worker.getFavoriteListCalled, "getFavorite() should ask worker to getFavorite() when sortType is none")
     }
     
@@ -159,7 +157,6 @@ class MobileListInteractorTests: XCTestCase {
         interactor.getFavoriteList(list: [], sortType: .lowPrice)
         
         // Then
-//        XCTAssert(worker.sortListCalled, "getFavoriteList() should ask worker to sortList() when sortType is lowPrice")
         XCTAssert(worker.getFavoriteListCalled, "getFavorite() should ask worker to getFavorite() when sortType is lowPrice")
     }
     
@@ -172,7 +169,6 @@ class MobileListInteractorTests: XCTestCase {
         interactor.getFavoriteList(list: [], sortType: .highPrice)
         
         // Then
-//        XCTAssert(worker.sortListCalled, "getFavoriteList() should ask worker to sortList() when sortType is highPrice")
         XCTAssert(worker.getFavoriteListCalled, "getFavorite() should ask worker to getFavorite() when sortType is highPrice")
     }
     
@@ -185,7 +181,6 @@ class MobileListInteractorTests: XCTestCase {
         interactor.getFavoriteList(list: [], sortType: .rating)
         
         // Then
-//        XCTAssert(worker.sortListCalled, "getFavoriteList() should ask worker to sortList() when sortType is rating")
         XCTAssert(worker.getFavoriteListCalled, "getFavorite() should ask worker to getFavorite() when sortType is rating")
     }
     
